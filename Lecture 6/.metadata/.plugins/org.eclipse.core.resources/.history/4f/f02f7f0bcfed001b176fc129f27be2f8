@@ -1,0 +1,33 @@
+package com.tels;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Set s = new HashSet();
+		s.add(1);
+		s.add("SSSS");
+		s.add(12.3);
+		s.add(null);
+		
+		System.out.println(s);
+		HashSet<String> s1 = new HashSet<String>();
+		s1.add("PUPUP");
+		s1.add("qqq");
+		s1.add("qqq");
+		System.out.println(s1);
+		
+		Set<String> s3 = new LinkedHashSet<String>();
+		s1.add("apples");
+		s1.add("bananas");
+		s1.add("oranges");
+		System.out.println(s3);
+		
+		
+	}
+
+}

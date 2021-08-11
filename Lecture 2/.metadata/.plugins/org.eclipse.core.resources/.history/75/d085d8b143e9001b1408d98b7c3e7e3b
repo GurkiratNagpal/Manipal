@@ -1,0 +1,8 @@
+package com.telstra;
+
+public class Lib {
+	public static void main(String[] args) {
+		Book book1 =new Book(1,100,"java");
+		System.out.print(book1);
+	}
+}

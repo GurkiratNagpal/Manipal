@@ -1,0 +1,5 @@
+package com.telstra.model.bookop;
+
+public interface BookOps {
+
+}

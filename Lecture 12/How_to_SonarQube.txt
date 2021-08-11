@@ -1,0 +1,6 @@
+c5fc76e30c82293d88e13aee95d94be7221dd656
+
+mvn sonar:sonar-Dsonar.projectKey=My_Project_sample  -Dsonar.host.url=http://localhost:9000
+   -Dsonar.login=c5fc76e30c82293d88e13aee95d94be7221dd656
+
+GOALS:  sonar:sonar -Dsonar.projectKey=My_Project_sample -Dsonar.host.url=http://localhost:9000 -Dsonar.login=0018bf19633f4e8bbcfda132760a1a6747dd3e5d

@@ -1,0 +1,5 @@
+package com.telstra.model.book;
+
+public class Book {
+
+}

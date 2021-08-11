@@ -1,0 +1,5 @@
+package com.telstra;
+
+public class Checked_Exception {
+
+}

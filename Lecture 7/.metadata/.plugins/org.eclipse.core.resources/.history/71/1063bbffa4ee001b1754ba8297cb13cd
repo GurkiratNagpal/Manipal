@@ -1,0 +1,13 @@
+package com.telstra.model.service;
+
+import com.telstra.model.book.Book;
+
+public class Bookservices {
+	
+	public static String addService(int bid, String n, int bpr, int c) {
+		
+		Book b = new Book(bid, n, bpr, c);
+		
+	}
+
+}

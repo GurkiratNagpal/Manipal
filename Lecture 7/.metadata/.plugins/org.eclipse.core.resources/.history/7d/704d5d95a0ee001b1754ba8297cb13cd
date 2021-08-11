@@ -1,0 +1,48 @@
+package com.telstra.model.bookop;
+
+import java.util.ArrayList;
+
+import com.telstra.model.book.Book;
+
+public class BookOperations implements BookOps{
+	private ArrayList<Book> blist = new ArrayList<Book>()
+;	@Override
+	public String addBook(Book b) {
+		// TODO Auto-generated method stub
+	
+	
+		blist.add(b);
+		return "Book added successfully";
+	}
+
+	@Override
+	public Book getAbook(int bid) {
+		for(Book b:blist) {
+			if(b.getBookId()==bid) {
+				return b;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public ArrayList<Book> getAllBooks() {
+		// TODO Auto-generated method stub
+		return blist;
+	}
+
+	@Override
+	public String delBook(Book bid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long getInventoryValue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+
+}

@@ -1,0 +1,21 @@
+package com.telstra;
+
+public class Hospital {
+	
+	
+	private int patientID;
+	private int patientName;
+	private String report;
+	
+	public Hospital(int patientID, int patientName) {
+		super();
+		this.patientID = patientID;
+		this.patientName = patientName;
+	}
+	
+	
+	public String generateReport() {
+		return report; 
+	}
+
+}

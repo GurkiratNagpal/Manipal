@@ -1,0 +1,5 @@
+package com.tels.entity;
+
+public class Aisle {
+
+}

@@ -1,0 +1,23 @@
+package com.tels.entity;
+
+import java.util.ArrayList;
+
+public class Warehouse {
+	
+	
+	public String getLocation(Item i) {
+		String locId = i.getLocationID();
+		String[] warehouse = locId.split("-");
+		int zone = warehouse[0].charAt(0) -'A';
+		int aisle =Integer.parseInt(warehouse[1]);
+		int shelf = Integer.parseInt(warehouse[2].substring(1));
+		int bin = Integer.parseInt(warehouse[3]);
+		return ("Zone "+ zone+ " Aisle " +aisle+ "Shelf " +shelf+ "Bin " +bin);
+		}
+	
+	
+	public int getItemPrice(ArrayList<Item>) {
+		
+	}
+
+}

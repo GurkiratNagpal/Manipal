@@ -1,0 +1,46 @@
+package com.tels;
+
+public class Main {
+	public static void main(String[] args) {
+	 Matho  add = (int a, int b)->a+b ;
+	 System.out.println(add.operation(10, 20));
+	 
+	 Matho  sub = (int a, int b)->a-b ;
+	 System.out.println(sub.operation(10, 20));
+	 
+	 Matho  mul = (a,b)->a*b ;
+	 System.out.println(mul.operation(10, 20));
+	 Classtemp c1 = new Classtemp("Blue", 12.3) {
+		
+		@Override
+		public String paint() {
+			// TODO Auto-generated method stub
+			return (color+rad);
+		}
+	};
+	 
+	 System.out.println(c1.paint());
+	 CircleInt ci = (c, r)->{return(c+" "+r);};
+	 System.out.println(ci.paint("RED", 10));
+	 
+	 isOdd i = (number)->{return(number%2==0)?false:true;};
+	 System.out.println("IS I ODD?  "+ i.isOdd(10));
+	
+	 isPrime ip = (num)->{
+		 for(int j=2; j<num; j++) {
+			 if (num%j==0) 
+				 return false;
+		 }
+		 return true;
+	 };
+	 System.out.println("is n prime?"+ ip.isP(97));
+	
+	}
+	
+	
+	
+	
+	public static int operate(int a, int b, Matho mop) {
+		return mop.operation(a, b);
+	}
+}

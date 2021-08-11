@@ -1,0 +1,39 @@
+Question 1:
+public class Test{
+public static void main(String[] args)
+{
+ float f=(1/4) *10;
+int i = Math.round(f);
+System.out.println(i);
+}}
+Answer =0 but Im getting 2
+
+
+Question2:
+1. int i = 0XCAFE;
+Yes, it is a hex int with correct prefixes.
+2. boolean b = 0;
+No, a boolean data type can only take values true and false not integers.
+3. char c = 'A';
+Yes, it is a correct variable.
+4. byte b = 128;
+Bytes have a limit upto 127, Hence, this is invalid.
+5. char c = ""A"";"
+The right handside is a string not character, hence, invalid.
+
+
+
+
+Questoion 3:
+ int x= 2;
+ int y= 1;
+ for (int z = 0; z < 5; z++){
+  if (( ++x > 2 ) || (++y > 2)){
+   x++;
+ }}
+ System.out.println(x + "" "" + y);
+ }
+
+
+
+Output = 12 and 1

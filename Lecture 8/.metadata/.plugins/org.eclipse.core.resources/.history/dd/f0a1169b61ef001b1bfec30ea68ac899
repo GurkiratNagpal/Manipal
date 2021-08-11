@@ -1,0 +1,31 @@
+package com.tels;
+
+import java.util.List;
+
+public class Test {
+	//find sum
+	// :upperbound : numbers(Integer/Double/Byte/Long/Short) ---> This is the max class it can go to
+	public static Number sumOfList(List<? extends Number> nlist) {
+		
+		double s=0.0;
+		for (Number n:nlist) {
+			s+=n.doubleValue();
+		}
+		return s;
+		
+	}
+	
+	//lowerbound: nINtgers ---> we can only take upper hierarchial i.e Object, Number and not DOub
+	 public static Number sumofList(List<? super Double> llist)
+	 {
+		 
+		 double s = 0.0;
+		 for(Object n:llist) {
+			 s+=((Double)n).doubleValue();
+		 }
+		return null;
+		 
+	 }
+	
+	
+}

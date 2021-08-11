@@ -1,0 +1,33 @@
+package com.tels.entity;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+
+public class FileReaderItems {
+	
+	public ArrayList<Item> ReadItems(){
+	try(FileInputStream input = new FileInputStream("C:\\Users\\d976833\\Desktop\\Bootcamp\\Lecture 5\\Object.txt");
+			ObjectInputStream in = new ObjectInputStream(input)) {
+		
+		
+		
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return null;
+		
+		
+	
+			
+	}
+	
+}
+
+

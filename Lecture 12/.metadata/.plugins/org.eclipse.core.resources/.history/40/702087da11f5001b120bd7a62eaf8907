@@ -1,0 +1,5 @@
+package Maven_project_Demo.SonarQube;
+
+public class ItemDb {
+
+}

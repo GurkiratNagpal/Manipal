@@ -1,0 +1,16 @@
+package com.telstra;
+
+public class Hospital {
+	private Newborn[] n= new Newborn[500]; //depending on the hospital capacity
+	private int patientNo=0;
+	
+	public void RegisterNewborn(String name, int months, double weight) {
+		n[patientNo]= new NewbornString name, int months, double weight());
+	}
+
+	
+	public String generateReport() {
+		return report; 
+	}
+
+}

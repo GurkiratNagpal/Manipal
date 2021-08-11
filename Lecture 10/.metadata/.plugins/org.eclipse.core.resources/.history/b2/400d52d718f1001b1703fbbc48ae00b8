@@ -1,0 +1,22 @@
+package Pack1;
+
+import java.util.ArrayList;
+
+public class Main {
+	public static void main(String[] args)
+	{
+		List<Person> pl = new ArrayList<Person>();
+		plist.add(new Person(11, 21, "abs@gmail.com", "F", "Mumbai"));
+		plist.add(new Person(12, 22, "abdsgmail.com", "M", "Bangalore"));
+		plist.add(new Person(13, 23, "absdz@gmail.com", "F", "Mumbai"));
+		plist.add(new Person(14, 24, "abssde@gmail.com", "M", "Bangalore"));
+		plist.add(new Person(15, 25, "abser@gmail.com", "F", "Mumbai"));
+		plist.add(new Person(16, 26, "abseryj@gmail.com", "M", "Bangalore"));
+		
+		boolean areAllMale = pl.st
+	
+	
+	
+	}
+	
+}

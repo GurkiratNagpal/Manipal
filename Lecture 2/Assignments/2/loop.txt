@@ -1,0 +1,42 @@
+Question 1
+for (i=1; i<count; i++) { 
+	a[i] = i*j*k*l*m*n; 
+} 
+
+So, since this is a multiplication we can club all variables together instead of calling them again and again.
+int z = j*k*l*m*n;
+for (i=1; i<count; i++) { 
+	a[i] = i*z;
+}
+
+
+QUESTION2
+for (discount = 0; discount < numD; discount++) 
+{ 
+ for (rate = 0; rate < numR; rate++) 
+ { 
+     rateTbl[rate] = rateTbl[rate] * discountTbl[discount]; 
+ } 
+} 
+
+
+Since, in the inner loop, the variable  discountTbl[discount] remains constant, we can assign it to a seperate variable instead of calling for the array again anad again.
+for (discount = 0; discount < numD; discount++) 
+{ 
+	thisDiscount discountTbl[discount]
+ for (rate = 0; rate < numR; rate++) 
+ { 
+     rateTbl[rate] = rateTbl[rate] * thisDiscount; 
+ } 
+} 
+QUESTION3
+for (i=1; i<count; i++) { 
+   a[i] = Math.pow(log(i)/log(3), 2); 
+} 
+
+So, to avoid sub expressions and the use of log again and again we make 2 new variables.
+const Log3 = log(3);
+for (i=1; i<count; i++) { 
+	x = log(i)/Log3;
+	a[i] = x*x;
+}

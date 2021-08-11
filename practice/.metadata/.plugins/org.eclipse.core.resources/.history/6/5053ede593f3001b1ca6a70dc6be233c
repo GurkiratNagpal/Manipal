@@ -1,0 +1,16 @@
+package com.assesspractice;
+
+import java.io.Serializable;
+
+class Address {}
+class Tester implements Serializable {
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	Address address;
+	public static void main(String[] args) {
+		
+	}
+
+}

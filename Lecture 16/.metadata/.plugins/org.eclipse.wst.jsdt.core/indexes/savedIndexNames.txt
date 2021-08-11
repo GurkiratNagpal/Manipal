@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+C:\Users\d976833\DB_Bootcamp\Desktop\Bootcamp\Lecture 16\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2654997146.index

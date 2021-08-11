@@ -1,0 +1,8 @@
+package com.assesspractice;
+
+import java.io.Serializable;
+
+class Address {}
+class Employee implements Serializable {
+ Address address;
+}

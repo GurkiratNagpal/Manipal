@@ -1,0 +1,29 @@
+package com.telstra;
+
+import java.util.Scanner;
+
+public class Customer {
+	private int custId;
+	private String custName;
+	private Account acc;
+	public Customer(String custName) {
+		super();
+		this.custName = custName;
+	}
+	
+	
+	public String generateAcc(String type, double balance) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Set pin for acc: ");
+		int pin = sc.nextInt();
+		acc = new Account(type, balance, pin);
+		return "Account created! Thankyou! Your Acc Number is"+ acc.getAccountId();
+	}
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,32 @@
+package com.telstra;
+import java.util.*;
+public class oddsum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter no ");
+		int n = sc.nextInt();
+		int s= oddsummer(n);
+		System.out.println(s);
+	}
+	public static int oddsummer(int m) {
+		 int r=0,sum=0;
+		 int ans=1, x=10, i=1;
+		 while(ans!=0) {
+			 double y=Math.pow(x, i);
+			 int l = (int) y;
+			 r=m%l;
+			 sum+=r;
+			 i=i+2;
+			 ans=m/l;
+			 
+		 
+		
+		 
+		
+			
+		}
+		 return sum;
+	}
+}

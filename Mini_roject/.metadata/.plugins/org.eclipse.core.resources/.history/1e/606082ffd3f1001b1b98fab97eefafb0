@@ -1,0 +1,21 @@
+package com.tels.entity;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+public class FileReaderItems {
+	
+	
+	try(FileInputStream input = new FileInputStream("C:\\Users\\d976833\\Desktop\\Bootcamp\\Lecture 5\\Object.txt");
+			ObjectInputStream in = new ObjectInputStream(input)) {
+		
+	}
+		
+		
+	
+			
+
+	
+}
+
+

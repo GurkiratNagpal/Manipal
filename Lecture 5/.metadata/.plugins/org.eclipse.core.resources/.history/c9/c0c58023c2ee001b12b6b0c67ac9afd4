@@ -1,0 +1,15 @@
+package com.telstra;
+
+public class Addthread implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		private Mathop op;
+		private Thread t1;
+		
+		
+		
+	}
+
+}

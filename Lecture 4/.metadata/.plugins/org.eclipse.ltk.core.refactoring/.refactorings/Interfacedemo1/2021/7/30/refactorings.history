@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.telstra.reports&apos; to &apos;Reports&apos;&#x0D;&#x0A;- Original project: &apos;Interfacedemo1&apos;&#x0D;&#x0A;- Original element: &apos;com.telstra.reports&apos;&#x0D;&#x0A;- Renamed element: &apos;com.telstra.Reports&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;reports&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.telstra{reports.java[reports" matchStrategy="1" name="Reports" qualified="false" references="true" similarDeclarations="false" stamp="1626934024017" textual="false" version="1.0"/>
+</session>

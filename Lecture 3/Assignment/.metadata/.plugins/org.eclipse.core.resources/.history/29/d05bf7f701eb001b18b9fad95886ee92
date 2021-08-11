@@ -1,0 +1,17 @@
+package com.telstra;
+
+public class Bank {
+	public static void main(String[] args) {
+		Customer c1 = new Customer("Rohan");
+		c1.generateAcc("Savings", 1000, 111);
+		Customer c2 = new Customer("Rohit");
+		c2.generateAcc("Savings", 10000, 222);
+		Customer c3 = new Customer("Rahul");
+		c3.generateAcc("Current", 5000, 333);
+
+		
+		
+		
+	}
+	
+}

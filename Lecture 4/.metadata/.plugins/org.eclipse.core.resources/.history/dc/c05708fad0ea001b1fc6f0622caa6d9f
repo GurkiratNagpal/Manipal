@@ -1,0 +1,38 @@
+package com.telstra;
+
+public class Unchecked_Excep {
+	
+	public static void main(String[] args) {
+		
+		
+		int result =0;
+		
+		try {
+		int n1 = Integer.parseInt(args[0]);
+		int n2 = Integer.parseInt(args[1]);
+		result = n1/n2;
+		} catch(ArithmeticException e1) {
+			System.out.println("Denominator is zero");
+			
+		}
+		catch(NumberFormatException e2) {
+			System.out.println("Invalid inputs");
+		}
+		catch(ArrayIndexOutOfBoundsException e3) {
+			System.out.println("Haven't given arguments");
+		}
+		finally {
+			System.out.println("In finally block");
+			System.out.println("result"+result)
+		}
+		
+		
+		
+		System.out.println("Byeeeeee"); //Will not be executed.
+		
+		
+		
+		
+	}
+
+}

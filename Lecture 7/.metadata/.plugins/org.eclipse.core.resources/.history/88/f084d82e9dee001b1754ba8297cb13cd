@@ -1,0 +1,81 @@
+package com.telstra.model.ui;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.telstra.model.book.Book;
+import com.telstra.model.bookop.BookOperations;
+
+public class BookstoreMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BookOperations bop = new BookOperations();
+		Scanner scanner = new Scanner(System.in);
+		while(true){
+			System.out.println("1. Add a Book");
+			System.out.println("2. Get a Book");
+			System.out.println("3. List of Books");
+			System.out.println("4. Delete a Book");
+			System.out.println("5. Get Inventory Value");
+			System.out.println("6. Exit");
+
+			System.out.println("Enter your choice");
+			int choice = scanner.nextInt();
+
+			switch(choice){
+			case 1:
+			{
+				System.out.println("Enter details for the book");
+				int bid = scanner.nextInt();
+				String n = scanner.next();
+				int bpr = scanner.nextInt();
+				int c = scanner.nextInt();
+				Book b = new Book(bid, n, bpr, c);
+				System.out.println(bop.addBook(b));
+				break;
+			}
+			case 2:
+			{	System.out.println("Enter Book Id: ");
+				int bid = scanner.nextInt();
+				Book b= bop.getAbook(bid);
+						if(b!=null) {
+							System.out.println(b);
+						}
+						else
+							System.out.println("Book not found");
+				break;
+			}
+			case 3:
+			{
+				System.out.println("Showing all details");
+				ArrayList<Book> blist = bop.getAllBooks();
+				for(Book b:blist)
+					{
+					
+					System.out.println(b);
+					
+					}
+				break;
+			}
+			case 4:
+			{
+				break;
+			}
+			case 5:
+			{
+				break;
+			}
+
+			default:
+
+				System.out.println("Bye");
+				System.exit(0);
+			}
+
+		}
+
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.telstra;
+
+public class Largest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a= 1, b=2, c=3;
+		int large1 = (a>b)?a:b;
+		int large2 = (large1>c)?large1:c;
+		System.out.print("largest number: "+ large2 );
+
+	}
+
+}

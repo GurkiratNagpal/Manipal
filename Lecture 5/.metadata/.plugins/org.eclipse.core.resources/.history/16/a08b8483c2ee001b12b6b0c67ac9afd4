@@ -1,0 +1,15 @@
+package com.telstra;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		Mathop op = new Mathop();
+//		op2.add(10);
+		
+		Addthread t1 = new Addthread(op, " THREAD1 ");
+	}
+
+}

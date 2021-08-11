@@ -1,0 +1,52 @@
+package com.telstra;
+
+import java.util.Scanner;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//		
+//		/*MyFunction myf = (n1, n2)->{return (n1+n2);};
+//		int res = myf.apply(10, 20);
+//		System.out.println(res);*/
+//		
+//		Function<Integer, Long> f = new Class1();
+//		System.out.println(f.apply(20));
+//		Function<Integer, Long> f2= (n)->(long)n +3L;
+//		System.out.println(f2.apply(12));
+//		
+//		
+//		Predicate<Object> fp = new Class2();
+//		System.out.println(fp.test(130));
+//		Predicate<Double> pred1 = (d)->d<100;		
+//		Predicate<Double> pred2 = (d)->d>75;	
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("%");
+//		double per = sc.nextDouble();
+//		if (pred1.and(pred2).test(per))
+//				System.out.println("Paased");
+//
+//		else
+//			System.out.println("Unpassed");
+//		System.out.println(pred1.and(pred2).negate().test(80.0));
+		Predicate<Integer> pred3 = (i)->i>10;
+		Predicate<ReverseNumber> prev = (rn)->rn.getN()==rn.Revnum();
+		System.out.println("Palindrome number???" + prev.test(new ReverseNumber(12121)));
+		//String palindrome
+		Predicate<ReverseString> ps = (rs)->rs.getS().equals(rs.RevString());
+		System.out.println("Pal string?"+ ps.test(new ReverseString("mam")));
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

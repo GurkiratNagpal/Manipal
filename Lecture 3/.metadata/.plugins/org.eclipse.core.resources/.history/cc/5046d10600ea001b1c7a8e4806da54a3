@@ -1,0 +1,19 @@
+package com.telstra;
+
+public class date1 {
+	private int dd;
+	private int yyyy;
+	private int mm;
+	public date1(int dd, int yyyy, int mm) {
+		super();
+		this.dd = dd;
+		this.yyyy = yyyy;
+		this.mm = mm;
+	}
+	@Override
+	public String toString() {
+		return "date1 [dd=" + dd + ", yyyy=" + yyyy + ", mm=" + mm + "]";
+	}
+	
+
+}

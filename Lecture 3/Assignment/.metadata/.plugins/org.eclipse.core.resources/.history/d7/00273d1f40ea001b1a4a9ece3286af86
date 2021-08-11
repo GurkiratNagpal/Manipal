@@ -1,0 +1,15 @@
+package com.telstra;
+
+public class Customer {
+	private int custId;
+	private String custName;
+	private 
+	public Customer(int custId, String custName) {
+		super();
+		this.custId = custId;
+		this.custName = custName;
+	}
+	
+	
+
+}

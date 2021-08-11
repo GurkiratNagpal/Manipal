@@ -1,0 +1,122 @@
+> db.Details.insert([ { Name: "Gurkirat", Age: 22, Address: "Amritsar", Bill: 2500}, {Name: "Ayush", Age: 22, Address: "Mumbai", Bill: 2000}, {Name: "Simran", Age:22, Address: "Mumbai", Bill:1592}, {Name: "Hrishikesh", Age:30, Address: "Amritsar", Bill:500}, {Name: "Malavika", Age:20, Address:"Gujarat", Bill:3100} ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 5,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.Deets.insert([ { Name: "Gurkirat", Age: 22, Address: "Amritsar", Bill: 2500}, {Name: "Ayush", Age: 22, Address: "Mumbai", Bill: 2000}, {Name: "Simran", Age:22, Address: "Mumbai", Bill:1592}, {Name: "Hrishikesh", Age:30, Address: "Amritsar", Bill:500}, {Name: "Malavika", Age:20, Address:"Gujarat", Bill:3100} ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 5,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.Deets.find().pretty()
+{
+        "_id" : ObjectId("610d1b2260b224104ff5339e"),
+        "Name" : "Gurkirat",
+        "Age" : 22,
+        "Address" : "Amritsar",
+        "Bill" : 2500
+}
+{
+        "_id" : ObjectId("610d1b2260b224104ff5339f"),
+        "Name" : "Ayush",
+        "Age" : 22,
+        "Address" : "Mumbai",
+        "Bill" : 2000
+}
+{
+        "_id" : ObjectId("610d1b2260b224104ff533a0"),
+        "Name" : "Simran",
+        "Age" : 22,
+        "Address" : "Mumbai",
+        "Bill" : 1592
+}
+{
+        "_id" : ObjectId("610d1b2260b224104ff533a1"),
+        "Name" : "Hrishikesh",
+        "Age" : 30,
+        "Address" : "Amritsar",
+        "Bill" : 500
+}
+{
+        "_id" : ObjectId("610d1b2260b224104ff533a2"),
+        "Name" : "Malavika",
+        "Age" : 20,
+        "Address" : "Gujarat",
+        "Bill" : 3100
+}
+> db
+Customer
+> var query = { Bill: {$gte:2000}}
+> db.Deets.update(query, {$set:{Bill: 5000}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Deets.update(query, {$set:{Bill: 5000}}, {multi:true})
+WriteResult({ "nMatched" : 3, "nUpserted" : 0, "nModified" : 2 })
+> db.Deets.find({Name: {$in: ["Gurkirat", "Hrishikesh"]}}).pretty()
+{
+        "_id" : ObjectId("610d1b2260b224104ff5339e"),
+        "Name" : "Gurkirat",
+        "Age" : 22,
+        "Address" : "Amritsar",
+        "Bill" : 5000
+}
+{
+        "_id" : ObjectId("610d1b2260b224104ff533a1"),
+        "Name" : "Hrishikesh",
+        "Age" : 30,
+        "Address" : "Amritsar",
+        "Bill" : 500
+}
+> db.Details.deleteOne(query})
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:26
+> db.Details.deleteOne(query)
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.Deets.find().sort({Name: -1}).pretty()
+{
+        "_id" : ObjectId("610d1b2260b224104ff533a0"),
+        "Name" : "Simran",
+        "Age" : 22,
+        "Address" : "Mumbai",
+        "Bill" : 1592
+}
+{
+        "_id" : ObjectId("610d1b2260b224104ff533a2"),
+        "Name" : "Malavika",
+        "Age" : 20,
+        "Address" : "Gujarat",
+        "Bill" : 5000
+}
+{
+        "_id" : ObjectId("610d1b2260b224104ff533a1"),
+        "Name" : "Hrishikesh",
+        "Age" : 30,
+        "Address" : "Amritsar",
+        "Bill" : 500
+}
+{
+        "_id" : ObjectId("610d1b2260b224104ff5339e"),
+        "Name" : "Gurkirat",
+        "Age" : 22,
+        "Address" : "Amritsar",
+        "Bill" : 5000
+}
+{
+        "_id" : ObjectId("610d1b2260b224104ff5339f"),
+        "Name" : "Ayush",
+        "Age" : 22,
+        "Address" : "Mumbai",
+        "Bill" : 5000
+}
+>                                                                                                                                                                                                    

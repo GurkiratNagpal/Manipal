@@ -1,0 +1,11 @@
+package com.telstra;
+
+public class loop {
+	public static void main(String [] args) {
+		
+		float f=(1/4) *100;
+		int i = Math.round(f);
+		System.out.print(i);
+}
+
+}

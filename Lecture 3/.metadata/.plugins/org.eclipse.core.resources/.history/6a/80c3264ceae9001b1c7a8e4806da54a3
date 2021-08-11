@@ -1,0 +1,29 @@
+package com.telstra;
+
+public class Person {
+	private final int pID;
+	private String pName;
+	private int pAge;
+	private static int count;
+	
+	static {
+		count = 0;	
+	}
+	private static int getCount() {
+		return ++count;
+	}
+	
+	public Person(String pName, int pAge) {
+		super();
+		this.pID=getCount();
+		this.pName = pName;
+		this.pAge = pAge;
+		
+	}
+	@Override
+	public String toString() {
+		return "Person [pID=" + pID + ", pName=" + pName + ", pAge=" + pAge + "]";
+	}
+	
+
+}

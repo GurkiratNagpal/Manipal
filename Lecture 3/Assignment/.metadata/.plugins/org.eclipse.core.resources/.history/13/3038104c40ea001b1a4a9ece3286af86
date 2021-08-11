@@ -1,0 +1,9 @@
+package com.telstra;
+
+public class Bank {
+	public static void main(String[] args) {
+		 Customer c1 = new Customer(123, "Weki", "Savings", 5000);
+		 System.out.println(c1);
+	}
+
+}

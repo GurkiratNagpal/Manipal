@@ -1,0 +1,29 @@
+package com.tels.entity;
+
+import java.util.ArrayList;
+
+import lombok.Getter;
+
+
+public class Shelf {
+	private int sh;
+	private @Getter String shelf;
+	Bin[]
+ 	
+	public Shelf(int sh, String shelf, Bin b) {
+		super();
+		this.sh = sh;
+		//this.shelf = shelf;
+		this.b = b;
+	}
+	
+//	public Shelf(int sh) {
+//		super();
+//		this.sh = sh;
+//		this.shelf ="L"+sh;
+//
+//	}
+	
+	
+
+}

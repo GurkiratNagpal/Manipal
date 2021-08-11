@@ -1,0 +1,13 @@
+package com.tels.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
+public class Item {
+	private String itemId;
+	private String locationID;
+	private int units;
+	private int price;
+}

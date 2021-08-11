@@ -1,0 +1,17 @@
+package com.tels;
+
+import java.util.List;
+
+public class Test {
+	//find sum
+	// :upperbound : numbers(Integer/Double/Byte/Long/Short)
+	public static Number sumOfList(List<? extends Number> nlist) {
+		
+		double s=0.0;
+		for (Number n:nlist) {
+			s+=n.doubleValue();
+		}
+		return s;
+		
+	}
+}

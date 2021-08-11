@@ -1,0 +1,36 @@
+package pack1;
+
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Person> plist = new ArrayList<Person>();
+		plist.add(new Person(11, 21, "abs@gmail.com", "F", "Mumbai"));
+		plist.add(new Person(12, 22, "abdsgmail.com", "M", "Bangalore"));
+		plist.add(new Person(13, 23, "absdz@yahoo.com", "F", "Mumbai"));
+		plist.add(new Person(14, 24, "abssde@gmail.com", "M", "Bangalore"));
+		plist.add(new Person(15, 25, "abser@gmail.com", "F", "Mumbai"));
+		plist.add(new Person(16, 26, "zseryj@gmail.com", "M", "Bangalore"));
+		
+		boolean areAllMale = plist.stream().allMatch(o->o.getGender().equalsIgnoreCase("M"));
+		
+		boolean areanyfeMale = plist.stream().anyMatch(o->o.getGender().equalsIgnoreCase("F"));
+	
+		boolean anyTeen = plist.stream().anyMatch(o->o.getAge()<20);
+		
+		boolean anyYahoo = plist.stream().noneMatch(p->p.getEmail().endsWith("@yahoo.com"));
+		System.out.println(" nONE Match?  " +anyYahoo);
+		
+		Set<String> sorted_names = plist.stream().map(p->p.getEmail()).collect(Collectors.toCollection(TreeSet::new));
+		
+		
+		System.out.println(sorted_names);
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+package com.telstra;
+
+public class Average {
+	public static double avg(int ...numbers) {
+		int sum = 0;
+		for(int i:numbers) {
+			sum+=i;
+
+		}
+		return(sum/numbers.length);
+	}
+	public static double avg(double d,int ...numbers) {
+		double sum = d;
+		for(int i:numbers) {
+			sum+=i;
+
+		}
+		return(sum/numbers.length+1);
+	}
+}

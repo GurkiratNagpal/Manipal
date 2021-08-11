@@ -1,0 +1,39 @@
+package com.telstra;
+import java.util.*;
+public class Account {
+//class Account : with memebers variables like AccountId,AccountType, Balance Amount, etc. etc.
+  //  Bind the methods withdraw() and Deposit() which can update Balance Amount
+	
+	private int AccountId;
+	private String AccountType;
+	private double Balance;
+	Random rand = new Random();
+	public Account(String AccountType, double Balance) {
+		super();
+		AccountId = rand.nextInt(11000)+10000;
+		this.AccountType= AccountType;
+		this.Balance = Balance;
+		
+	}
+	
+	public void debit(double n){
+		Balance -= n;
+		
+	}
+	
+	
+	public  void credit(double n) {
+		Balance += n;
+		
+	}
+	
+	public double getBalance() {
+		return Balance;
+	}
+
+	@Override
+	public String toString() {
+		return "Account [AccountId=" + AccountId + ", AccountType=" + AccountType + ", Balance=" + Balance + "]";
+	}
+	
+}

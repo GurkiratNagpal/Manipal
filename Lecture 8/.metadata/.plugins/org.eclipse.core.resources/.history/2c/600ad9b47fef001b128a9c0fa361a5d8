@@ -1,0 +1,17 @@
+package tels;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
+
+class TestClassTest {
+
+	@Test
+	void test() {
+		int val1 =5;
+		int val2 =6;
+		assertTrue(val1<val2);
+		assertFalse(val1<val2);
+	}
+
+}

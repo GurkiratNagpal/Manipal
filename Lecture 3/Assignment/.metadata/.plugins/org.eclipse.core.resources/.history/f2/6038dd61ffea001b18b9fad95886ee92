@@ -1,0 +1,31 @@
+package com.telstra;
+
+public class Customer {
+	private int custId;
+	private String custName;
+	private Account acc;
+	public Customer(int custId, String custName, String AccountType, double Balance) {
+		super();
+		this.custId = custId;
+		this.custName = custName;
+		acc = new Account(AccountType, Balance);
+	}
+	
+	public void withdraw(double n) {
+		
+	   acc.debit(n);
+		
+	}
+	public void deposit( double n) {
+		acc.credit(n);
+	}
+	public double getBal() {
+		return acc.getBalance();
+	}
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + ", custName=" + custName + ", acc=" + acc + "]";
+	}
+	
+
+}

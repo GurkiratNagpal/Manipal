@@ -1,0 +1,24 @@
+package com.assesspractice;
+
+import java.io.Serializable;
+import java.util.StringTokenizer;
+public class ThreadEx extends Thread{
+	 public static void main(String argv[]){
+	  ThreadEx t = new ThreadEx();
+	  t.runMe();
+	  t.start();
+	 }
+	 public void run(){
+	  System.out.print("Thread Running");
+	  String s= "w-e-4-re-wq";
+	  String[] s1 = s.split("-");
+	  StringTokenizer st = new StringTokenizer(s, "-");
+	  while (st.hasMoreTokens())
+		     System.out.println(st.nextToken());
+	  
+ 	 }
+	 
+	 public void runMe(){
+	  run();
+	 }
+	}

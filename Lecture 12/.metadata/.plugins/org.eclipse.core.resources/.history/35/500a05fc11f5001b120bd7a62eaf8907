@@ -1,0 +1,17 @@
+package Maven_project_Demo.SonarQube;
+import java.util.*;
+public class ItemService {
+	public boolean addItem(Item item)
+	{
+		  
+		ItemDb.getDefaultInstance().getItemDb().add(item);
+		return true;
+	}
+	public boolean removeItem(Item item)
+	{
+		ItemDb.getDefaultInstance().getItemDb().remove(item);
+		return true;
+	}
+	public ArrayList getAllItems()
+	{
+		

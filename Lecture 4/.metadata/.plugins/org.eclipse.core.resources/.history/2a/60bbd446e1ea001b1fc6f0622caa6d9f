@@ -1,0 +1,30 @@
+package com.telstra.emppack;
+import package com.telstra;
+import javax.naming.InsufficientResourcesException;
+
+public class Employee_customisedexception {
+	private int EmpID;
+	private int balanceLeave;
+	public Employee_customisedexception(int empID, int balanceLeave) {
+		super();
+		EmpID = empID;
+		this.balanceLeave = balanceLeave;
+	}
+	@Override
+	public String toString() {
+		return "Employee_customisedexception [EmpID=" + EmpID + ", balanceLeave=" + balanceLeave + "]";
+	};
+	
+	public String applyLeave(int noOfDays) {
+		if(balanceLeave<noOfDays)
+			throw new InsufficientResourcesException("Leave not sanctioned");
+		else
+		{
+			balanceLeave -= noOfDays;
+			return ("Hpapy time!")
+		}
+		
+	}
+	
+
+}

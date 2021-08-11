@@ -1,0 +1,18 @@
+package com.assesspractice;
+
+import java.io.Serializable;
+
+public class ThreadEx extends Thread{
+	 public static void main(String argv[]){
+	  ThreadEx t = new ThreadEx();
+	  t.runMe();
+	  t.start();
+	 }
+	 public void run(){
+	  System.out.print(""Thread Running"");
+	 }
+	 
+	 public void runMe(){
+	  run();
+	 }
+	}

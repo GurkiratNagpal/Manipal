@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\d976833\Desktop\Bootcamp\Lecture 7\.metadata\.plugins\org.eclipse.jdt.core
+387313236.index
+3451820374.index
+2679503833.index
+395855547.index
+1991655398.index

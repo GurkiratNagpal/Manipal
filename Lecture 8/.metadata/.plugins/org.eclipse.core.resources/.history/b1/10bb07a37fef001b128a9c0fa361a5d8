@@ -1,0 +1,15 @@
+package tels;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
+public class TestClass {
+	
+	
+	@Test
+	public void test() {
+
+		
+	}
+	
+
+}

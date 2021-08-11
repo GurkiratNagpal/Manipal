@@ -1,0 +1,7 @@
+package com.telstra;
+import java.util.*;
+public class Newborn {
+	private String name;
+	private Date() d1;
+
+}

@@ -1,0 +1,26 @@
+package com.telstra.model.service;
+
+import com.telstra.model.book.Book;
+import com.telstra.model.bookop.BookOperations;
+
+public class Bookservices {
+	static BookOperations bop = new BookOperations();
+	public static String addService(int bid, String n, int bpr, int c) {
+		Book b = new Book(bid, n, bpr, c);
+		return bop.addBook(b);
+		
+	}
+	
+	public static String getBookService(int n) {
+		Book b= bop.getAbook(n);
+		if(b!=null) {
+			return((b.toString()));
+		}
+		else
+		return "Book not found";
+	}
+	public static String allBookService() {
+		
+	}
+
+}

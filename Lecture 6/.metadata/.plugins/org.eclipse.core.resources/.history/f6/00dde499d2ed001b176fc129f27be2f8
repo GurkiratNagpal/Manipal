@@ -1,0 +1,30 @@
+package com.telstra;
+
+import java.util.ArrayList;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<String> strar = new ArrayList<String>();
+		strar.add("Cudie");
+		strar.add("Cudie");
+		strar.add("Maey");
+		strar.add("Cytee");
+		strar.add("Jakes");
+		strar.add("HOlten");
+		strar.add("IDk");
+		System.out.println(strar);
+		strar.add(1, "Mahesh");
+		System.out.println(strar);
+		strar.remove(3);
+		System.out.println(strar);
+		strar.add(3, "Naresh");
+		System.out.println(strar);
+		strar.remove("Cudie");
+		System.out.println(strar);
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.telstra.emppack;
+
+public class Employee {
+
+}

@@ -1,0 +1,23 @@
+package jUnitDEMOtest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import jUnitDEMO.evenODD;
+
+public class evenODDTest implements Runnable {
+
+	@Test  //Test module J unit external library---> default faces failure always
+	void test() {
+		
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		evenODD ob = new evenODD();
+		assertEquals(true, ob.isEven(10));
+	}
+
+}

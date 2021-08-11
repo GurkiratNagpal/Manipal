@@ -1,0 +1,31 @@
+package com.tels;
+
+public class Discount_Calc {
+	
+	private String Item_Name;
+	private int quantity;
+	private int price;
+	private int disc_perc
+	private double discounted_price;
+	
+	public static void main(String[] args) {
+		
+		Discount_Calc d1 = new Discount_Calc("Clothes", 0, 0, 0)
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Discount_Calc [Item_Name=" + Item_Name + ", quantity=" + quantity + ", price=" + price + ", discount=5% and price after discount=  "
+				+ discount + "]";
+	}
+
+	public Discount_Calc(String item_Name, int quantity, int price, double discount) {
+		super();
+		Item_Name = item_Name;
+		this.quantity = quantity;
+		this.price = price;
+		this.discount = discount;
+	}
+
+}

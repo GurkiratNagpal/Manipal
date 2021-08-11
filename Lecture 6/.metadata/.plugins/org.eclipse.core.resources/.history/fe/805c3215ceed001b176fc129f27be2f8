@@ -1,0 +1,20 @@
+package com.tels;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Set s = new HashSet();
+		s.add(1);
+		s.add("SSSS");
+		s.add(12.3);
+		s.add(null);
+		
+		System.out.println(s);
+		
+	}
+
+}

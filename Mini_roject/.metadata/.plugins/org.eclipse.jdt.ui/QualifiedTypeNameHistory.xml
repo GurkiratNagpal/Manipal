@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.tels.entity.FileReaderItems"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collector"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.ListIterator"/>
+    <fullyQualifiedTypeName name="com.tels.entity.Warehouse"/>
+    <fullyQualifiedTypeName name="teltsra.model.Item"/>
+    <fullyQualifiedTypeName name="telstra.model.itemops.Warehouse"/>
+    <fullyQualifiedTypeName name="teltsra.model.HealthCare"/>
+    <fullyQualifiedTypeName name="teltsra.model.MedicalSupplies"/>
+    <fullyQualifiedTypeName name="telstra.model.itemops.FileReaderItems"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="teltsra.model.PharmDrugs"/>
+    <fullyQualifiedTypeName name="jdk.internal.misc.FileSystemOption"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="teltsra.model.Warehouse"/>
+</qualifiedTypeNameHistroy>

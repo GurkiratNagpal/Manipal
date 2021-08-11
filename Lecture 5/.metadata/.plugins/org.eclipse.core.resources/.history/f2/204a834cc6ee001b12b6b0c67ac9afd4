@@ -1,0 +1,17 @@
+package com.telstra;
+
+public class Mathop {
+	private int i=0;
+	public synchronized void add(int n) {
+		i+=n;
+		System.out.println("I value(ADDED): "+i);
+	}
+	
+	
+	public synchronized void sub(int n) {
+		i-=n;
+		System.out.println("I value(SUBTRACTED): "+i);
+	}
+
+
+}

@@ -1,0 +1,10 @@
+package com.telstra.model.ui;
+
+public class BookstoreMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

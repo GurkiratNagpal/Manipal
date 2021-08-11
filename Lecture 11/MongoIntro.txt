@@ -1,0 +1,890 @@
+--
+> use ItemDb
+switched to db ItemDb
+> db.createCollection('Items')
+{ "ok" : 1 }
+> db.Items.insert({ItemName: "Peter Story", ItemType: "Book", Price: 250, Quantity:123 })
+WriteResult({ "nInserted" : 1 })
+> db.find()
+uncaught exception: TypeError: db.find is not a function :
+@(shell):1:1
+> db.Items.find()
+{ "_id" : ObjectId("6108d62262cabd4ff4216371"), "ItemName" : "Peter Story", "ItemType" : "Book", "Price" : 250, "Quantity" : 123 }
+> db.Items.insert({ItemName: "New Car", ItemType: "Toy", Price: 130, Quantity:150 })
+WriteResult({ "nInserted" : 1 })
+> db.Items.insert({ItemName: "Beethoven", ItemType: "CD", Price: 260, Quantity:1 })
+WriteResult({ "nInserted" : 1 })
+> db.Items.find().pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 150
+}
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+> db.Items.find()
+{ "_id" : ObjectId("6108d62262cabd4ff4216371"), "ItemName" : "Peter Story", "ItemType" : "Book", "Price" : 250, "Quantity" : 123 }
+{ "_id" : ObjectId("6108d65662cabd4ff4216372"), "ItemName" : "New Car", "ItemType" : "Toy", "Price" : 130, "Quantity" : 150 }
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 1 }
+> db.Items.find({ItemName:"New Car"}).pretty()
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 150
+}
+> db.Items.find({Price: 260}).pretty()
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+> db.Items.find({Price: {$lte :260}}).pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 150
+}
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+> db.Items.find({Price: {$gte :260}}).pretty()
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+> db.Items.find({Price: {$ne :260}}).pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 150
+}
+> db.Items.find({Price: {$eq :260}}).pretty()
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+> db.Items.find({Price: {$gt :260}}).pretty()
+> db.Items.find({Price: {$lt :260}}).pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 150
+}
+> show collections Items
+Items
+> db.Items.find({Price: {$gt :250}}).pretty()
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+> db.Items.find({ItemType: {$eq:"CD"}})
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 1 }
+> db.Items.find({Price:{$in:[123, 150]}}).pretty()
+> db.Items.find({Price:{$in:[260 150]}}).pretty()
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:31
+> db.Items.find({Price:{$in:[260, 150]}}).pretty()
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+> db.Items.insert({
+... ItemName: "Harry Potter"
+... ItemType: "Movies"
+... Price: 280
+... Quantity: 10
+... })
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):3:0
+> db.Items.insert({ ItemName: "Harry Potter" ItemType: "Movies" Price: 280 Quantity: 10 })
+uncaught exception: SyntaxError: missing } after property list :
+@(
+> db.Items.insert({ ItemName: "Harry Potter" ItemType: "Movies" Price: 280 Quantity: 10 })
+>
+> db.Items.insert({ ItemName: "Harry Potter" ItemType: "Movies" Price: 280 Quantity: 10 })
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:43
+> db.Items.insert({ ItemName: "Harry Potter", ItemType: "Movies", Price: 280, Quantity: 10 })
+WriteResult({ "nInserted" : 1 })
+> db.Items.find({Price:{$in:[260, 280]}}).pretty()
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+{
+        "_id" : ObjectId("6108e1d362cabd4ff4216374"),
+        "ItemName" : "Harry Potter",
+        "ItemType" : "Movies",
+        "Price" : 280,
+        "Quantity" : 10
+}
+> db.Items.find({Price:{$in:[260, 280]}}).pretty().limit(1)
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+> db.Items.find({ItemType: {$eq:"CD"}})
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 1 }
+> db.Items.find({Quantity:{$in:[123, 150]}}).pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 150
+}
+> db.Items.find({ItemType: {$eq:"CD"}})
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 1 }
+> db.Items.find({Price: {$gt :250}}).pretty()
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+{
+        "_id" : ObjectId("6108e1d362cabd4ff4216374"),
+        "ItemName" : "Harry Potter",
+        "ItemType" : "Movies",
+        "Price" : 280,
+        "Quantity" : 10
+}
+> db.Items.find(
+... {
+... $and:
+... [
+... {Price: {$gt: 150}},
+... {Quantity:{$lt:2}}
+... ]
+... }
+... )
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 1 }
+> var query = {Price : {$lt: 150}}
+> db.Items.find( { $or: [ {Price: {$gt: 150}}, {ItemType:"Book"} ] } )
+{ "_id" : ObjectId("6108d62262cabd4ff4216371"), "ItemName" : "Peter Story", "ItemType" : "Book", "Price" : 250, "Quantity" : 123 }
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 1 }
+{ "_id" : ObjectId("6108e1d362cabd4ff4216374"), "ItemName" : "Harry Potter", "ItemType" : "Movies", "Price" : 280, "Quantity" : 10 }
+> db.Items.find( { Price : {$not: {$lt: 150}})
+...
+...
+> db.Items.find({Price:{$not: {$lt:150}}})
+{ "_id" : ObjectId("6108d62262cabd4ff4216371"), "ItemName" : "Peter Story", "ItemType" : "Book", "Price" : 250, "Quantity" : 123 }
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 1 }
+{ "_id" : ObjectId("6108e1d362cabd4ff4216374"), "ItemName" : "Harry Potter", "ItemType" : "Movies", "Price" : 280, "Quantity" : 10 }
+> db.Items.find( { $or: [ {Price: {$gt: 150}}, {ItemType:"Book"} ] } )
+{ "_id" : ObjectId("6108d62262cabd4ff4216371"), "ItemName" : "Peter Story", "ItemType" : "Book", "Price" : 250, "Quantity" : 123 }
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 1 }
+{ "_id" : ObjectId("6108e1d362cabd4ff4216374"), "ItemName" : "Harry Potter", "ItemType" : "Movies", "Price" : 280, "Quantity" : 10 }
+> db.Items.find( { $and: [ {Price: {$gt: 150}}, {Quantity:{$gt:2}} ] } )
+{ "_id" : ObjectId("6108d62262cabd4ff4216371"), "ItemName" : "Peter Story", "ItemType" : "Book", "Price" : 250, "Quantity" : 123 }
+{ "_id" : ObjectId("6108e1d362cabd4ff4216374"), "ItemName" : "Harry Potter", "ItemType" : "Movies", "Price" : 280, "Quantity" : 10 }
+> db.Items.find( {$nor:
+... [
+... query,
+... {Quantity: {$gt:2}}
+... ]
+... })
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 1 }
+> db.Items.insert({
+... ItemName: "Something_Fr_Trying_exists",
+... Type: "Different_Attribute",
+... Age: "18}
+uncaught exception: SyntaxError: "" literal not terminated before end of script :
+@(shell):4:9
+> db.Items.insert({ ItemName: "Something_Fr_Trying_exists", Type: "Different_Attribute",  Age: "18})
+uncaught exception: SyntaxError: "" literal not terminated before end of script :
+@(shell):1:98
+> db.Items.insert({ ItemName: "Something_Fr_Trying_exists", Type: "Different_Attribute",  Age: 18})
+WriteResult({ "nInserted" : 1 })
+> db.Items.find({Type: {$exists: True}}).pretty()
+uncaught exception: ReferenceError: True is not defined :
+@(shell):1:23
+> db.Items.find({Type: {$exists: true}}).pretty()
+{
+        "_id" : ObjectId("6108ec2362cabd4ff4216375"),
+        "ItemName" : "Something_Fr_Trying_exists",
+        "Type" : "Different_Attribute",
+        "Age" : 18
+}
+> db.Items.find({Age: {$exists: true}}).pretty()
+{
+        "_id" : ObjectId("6108ec2362cabd4ff4216375"),
+        "ItemName" : "Something_Fr_Trying_exists",
+        "Type" : "Different_Attribute",
+        "Age" : 18
+}
+> db.Items.find({Price: {$type: double}}).pretty()
+uncaught exception: ReferenceError: double is not defined :
+@(shell):1:24
+> db.Items.find({Price: {$type:"double"}}).pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 150
+}
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+{
+        "_id" : ObjectId("6108e1d362cabd4ff4216374"),
+        "ItemName" : "Harry Potter",
+        "ItemType" : "Movies",
+        "Price" : 280,
+        "Quantity" : 10
+}
+> db.Items.find({Price: {$type:"integer"}}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "Unknown type name alias: integer",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.Items.find({Price: {$type:"int"}}).pretty()
+> db.Items.update(query,{$set: {Quantity: 20}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.find().pretty()
+uncaught exception: TypeError: db.find is not a function :
+@(shell):1:1
+> db.Items.find().pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 20
+}
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+{
+        "_id" : ObjectId("6108e1d362cabd4ff4216374"),
+        "ItemName" : "Harry Potter",
+        "ItemType" : "Movies",
+        "Price" : 280,
+        "Quantity" : 10
+}
+{
+        "_id" : ObjectId("6108ec2362cabd4ff4216375"),
+        "ItemName" : "Something_Fr_Trying_exists",
+        "Type" : "Different_Attribute",
+        "Age" : 18
+}
+> var query = {Quantity:{$lt: 100}}
+> db.Items.update(query,{$set: {Quantity: 20}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.Items.find().pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 20
+}
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+{
+        "_id" : ObjectId("6108e1d362cabd4ff4216374"),
+        "ItemName" : "Harry Potter",
+        "ItemType" : "Movies",
+        "Price" : 280,
+        "Quantity" : 10
+}
+{
+        "_id" : ObjectId("6108ec2362cabd4ff4216375"),
+        "ItemName" : "Something_Fr_Trying_exists",
+        "Type" : "Different_Attribute",
+        "Age" : 18
+}
+> db.Items.update(query,{$set: {Quantity: 100}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Items.find().pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 100
+}
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 1
+}
+{
+        "_id" : ObjectId("6108e1d362cabd4ff4216374"),
+        "ItemName" : "Harry Potter",
+        "ItemType" : "Movies",
+        "Price" : 280,
+        "Quantity" : 10
+}
+{
+        "_id" : ObjectId("6108ec2362cabd4ff4216375"),
+        "ItemName" : "Something_Fr_Trying_exists",
+        "Type" : "Different_Attribute",
+        "Age" : 18
+}
+> db.Items.updateMany(query,{$set: {Quantity: 100}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.Items.find().pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 123
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 100
+}
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 100
+}
+{
+        "_id" : ObjectId("6108e1d362cabd4ff4216374"),
+        "ItemName" : "Harry Potter",
+        "ItemType" : "Movies",
+        "Price" : 280,
+        "Quantity" : 100
+}
+{
+        "_id" : ObjectId("6108ec2362cabd4ff4216375"),
+        "ItemName" : "Something_Fr_Trying_exists",
+        "Type" : "Different_Attribute",
+        "Age" : 18
+}
+> var query = {Price:{$gt: 250}}
+>
+>
+>
+>
+>
+>
+>
+> db.Items.update(query,{$set: {Quantity: 300}}, {multi:true})
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+> db.Items.update({ItemType: "Book"},{$set: {Quantity: 150}}, {multi:true})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Items.find().pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 150
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 100
+}
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 300
+}
+{
+        "_id" : ObjectId("6108e1d362cabd4ff4216374"),
+        "ItemName" : "Harry Potter",
+        "ItemType" : "Movies",
+        "Price" : 280,
+        "Quantity" : 300
+}
+{
+        "_id" : ObjectId("6108ec2362cabd4ff4216375"),
+        "ItemName" : "Something_Fr_Trying_exists",
+        "Type" : "Different_Attribute",
+        "Age" : 18
+}
+> var query = {Price:{$gte: 250}}
+> db.Items.update(query,{$set: {Quantity: 300}}, {multi:true})
+WriteResult({ "nMatched" : 3, "nUpserted" : 0, "nModified" : 1 })
+> db.find().pretty
+uncaught exception: TypeError: db.find is not a function :
+@(shell):1:1
+> db.find().pretty()
+uncaught exception: TypeError: db.find is not a function :
+@(shell):1:1
+> var query = {Price:{$gte: 250}}
+> db.Items.update(query,{$set: {Quantity: 300}}, {multi:true})
+WriteResult({ "nMatched" : 3, "nUpserted" : 0, "nModified" : 0 })
+> db.Items.find().pretty()
+{
+        "_id" : ObjectId("6108d62262cabd4ff4216371"),
+        "ItemName" : "Peter Story",
+        "ItemType" : "Book",
+        "Price" : 250,
+        "Quantity" : 300
+}
+{
+        "_id" : ObjectId("6108d65662cabd4ff4216372"),
+        "ItemName" : "New Car",
+        "ItemType" : "Toy",
+        "Price" : 130,
+        "Quantity" : 100
+}
+{
+        "_id" : ObjectId("6108d67e62cabd4ff4216373"),
+        "ItemName" : "Beethoven",
+        "ItemType" : "CD",
+        "Price" : 260,
+        "Quantity" : 300
+}
+{
+        "_id" : ObjectId("6108e1d362cabd4ff4216374"),
+        "ItemName" : "Harry Potter",
+        "ItemType" : "Movies",
+        "Price" : 280,
+        "Quantity" : 300
+}
+{
+        "_id" : ObjectId("6108ec2362cabd4ff4216375"),
+        "ItemName" : "Something_Fr_Trying_exists",
+        "Type" : "Different_Attribute",
+        "Age" : 18
+}
+> db.Items.delete({True: {$exists: true}})
+uncaught exception: TypeError: db.Items.delete is not a function :
+@(shell):1:1
+> db.Items.deleteOne({True: {$exists: true}})
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.Items.deleteOne({Type: {$exists: true}})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.Items.find().sort({Quantity: 1})
+{ "_id" : ObjectId("6108d65662cabd4ff4216372"), "ItemName" : "New Car", "ItemType" : "Toy", "Price" : 130, "Quantity" : 100 }
+{ "_id" : ObjectId("6108d62262cabd4ff4216371"), "ItemName" : "Peter Story", "ItemType" : "Book", "Price" : 250, "Quantity" : 300 }
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 300 }
+{ "_id" : ObjectId("6108e1d362cabd4ff4216374"), "ItemName" : "Harry Potter", "ItemType" : "Movies", "Price" : 280, "Quantity" : 300 }
+> db.Items.find().sort({Quantity: -1})
+{ "_id" : ObjectId("6108d62262cabd4ff4216371"), "ItemName" : "Peter Story", "ItemType" : "Book", "Price" : 250, "Quantity" : 300 }
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 300 }
+{ "_id" : ObjectId("6108e1d362cabd4ff4216374"), "ItemName" : "Harry Potter", "ItemType" : "Movies", "Price" : 280, "Quantity" : 300 }
+{ "_id" : ObjectId("6108d65662cabd4ff4216372"), "ItemName" : "New Car", "ItemType" : "Toy", "Price" : 130, "Quantity" : 100 }
+> db.Items.find().sort({Quantity: -1}).limit(2)
+{ "_id" : ObjectId("6108d67e62cabd4ff4216373"), "ItemName" : "Beethoven", "ItemType" : "CD", "Price" : 260, "Quantity" : 300 }
+{ "_id" : ObjectId("6108d62262cabd4ff4216371"), "ItemName" : "Peter Story", "ItemType" : "Book", "Price" : 250, "Quantity" : 300 }
+> db.Items.find().sort({Quantity: -1}).skip(2)
+{ "_id" : ObjectId("6108e1d362cabd4ff4216374"), "ItemName" : "Harry Potter", "ItemType" : "Movies", "Price" : 280, "Quantity" : 300 }
+{ "_id" : ObjectId("6108d65662cabd4ff4216372"), "ItemName" : "New Car", "ItemType" : "Toy", "Price" : 130, "Quantity" : 100 }
+> use Employee
+switched to db Employee
+> db
+Employee
+> use Person
+switched to db Person
+> db.Employee.insert([
+... {
+... Name: "Peter Sans",
+... Dept: "Sales",
+... Designation: "Manager",
+... Salary =12000
+... }
+... {
+... Name: "Edgar Mathew",
+... Dept: "Training",
+... Designation: "Sr Manager",
+... Salary = 13000
+... }
+... {
+... Name: "William Doe",
+... Dept:"Manufacturing",
+... Designation: "Engineer",
+... Salary: 15000
+... }
+... {
+... Name: "Sham Saran",
+... Dept: "Training",
+... Designation: "Trainer",
+... Salary:25000
+... }
+... ])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):8:0
+> db.Employee.insert([ { Name: "Peter Sans", Dept: "Sales", Designation: "Manager", Salary =12000 }, { Name: "Edgar Mathew", Dept: "Training", Designation: "Sr Manager", Salary = 13000 }, { Name: "William Doe", Dept:"Manufacturing", Designation: "Engineer", Salary: 15000 }, { Name: "Sham Saran", Dept: "Training", Designation: "Trainer", Salary:25000 } ])
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:89
+> db.Employee.insert([ { Name: "Peter Sans", Dept: "Sales", Designation: "Manager", Salary =12000 }, { Name: "Edgar Mathew", Dept: "Training", Designation: "Sr Manager", Salary : 13000 }, { Name: "William Doe", Dept:"Manufacturing", Designation: "Engineer", Salary: 15000 }, { Name: "Sham Saran", Dept: "Training", Designation: "Trainer", Salary:25000 } ])
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:89
+> db.Employee.insert([ { Name: "Peter Sans", Dept: "Sales", Designation: "Manager", Salary =12000 }, { Name: "Edgar Mathew", Dept: "Training", Designation: "Sr Manager", Salary = 13000}])
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:89
+> db.Employee.insert([ { Name: "Peter Sans", Dept: "Sales", Designation: "Manager", Salary =12000 }])
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:89
+> db.Employee.insert({ Name: "Peter Sans", Dept: "Sales", Designation: "Manager", Salary =12000 })
+uncaught exception: SyntaxError: missing : after property id :
+@(db.Employee.insert([ { Name: "Peter Sans", Dept: "Sales", Designation: "Manager", Salary: 12000 }, { Name: "Edgar Mathew", Dept: "Training", Designation: "Sr Manager", Salary = 13000 }, { Name: "William Doe", Dept:"Manufacturing", Designation: "Engineer", Salary: 15000 }, { Name: "Sham Saran", Dept: "Training", Designation: "Trainer", Salary:25000 } ]) Designation: "Euncaught exception: SyntaxError: missing : after property id :ng", Designation: "Trainer", Salary:25000 } ]) Designation: "E@(shell):1:175ry: 15000 }, { Name: "Sham Saran", Dept: "Training", Designation: "Trainer", Salary:25000 } ])
+> db.Employee.insert({ Name: "Peter Sans", Dept: "Sales", Designation: "Manager", Salary =12000 })
+>
+>                                                                                                            Designation: "E> ineer", Salary: 15000 }, { Name: "Sham Saran", Dept: "Training", Designation: "Trainer", Salary:25000 } ])
+>
+>
+>
+> db.Employee.insert([ { Name: "Peter Sans", Dept: "Sales", Designation: "Manager", Salary: 12000 }, { Name: "Edgar Mathew", Dept: "Training", Designation: "Sr Manager", Salary : 13000 }, { Name: "William Doe", Dept:"Manufacturing", Designation: "Engineer", Salary: 15000 }, { Name: "Sham Saran", Dept: "Training", Designation: "Trainer", Salary:25000 } ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 4,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.Employee.find().sort({Salary:-1})
+{ "_id" : ObjectId("61090ac662cabd4ff4216379"), "Name" : "Sham Saran", "Dept" : "Training", "Designation" : "Trainer", "Salary" : 25000 }
+{ "_id" : ObjectId("61090ac662cabd4ff4216378"), "Name" : "William Doe", "Dept" : "Manufacturing", "Designation" : "Engineer", "Salary" : 15000 }
+{ "_id" : ObjectId("61090ac662cabd4ff4216377"), "Name" : "Edgar Mathew", "Dept" : "Training", "Designation" : "Sr Manager", "Salary" : 13000 }
+{ "_id" : ObjectId("61090ac662cabd4ff4216376"), "Name" : "Peter Sans", "Dept" : "Sales", "Designation" : "Manager", "Salary" : 12000 }
+> db.Employee.find().sort({Salary:-1}).pretty()
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216379"),
+        "Name" : "Sham Saran",
+        "Dept" : "Training",
+        "Designation" : "Trainer",
+        "Salary" : 25000
+}
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216378"),
+        "Name" : "William Doe",
+        "Dept" : "Manufacturing",
+        "Designation" : "Engineer",
+        "Salary" : 15000
+}
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216377"),
+        "Name" : "Edgar Mathew",
+        "Dept" : "Training",
+        "Designation" : "Sr Manager",
+        "Salary" : 13000
+}
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216376"),
+        "Name" : "Peter Sans",
+        "Dept" : "Sales",
+        "Designation" : "Manager",
+        "Salary" : 12000
+}
+> var query = {Designation: "Trainer"}
+> db.Employee.updateMany({query, {$set: {Salary: 20000}}})
+uncaught exception: SyntaxError: expected property name, got '{' :
+@(shell):1:31
+> db.Employee.updateMany(query, {$set: {Salary: 20000}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.Employee.find().pretty()
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216376"),
+        "Name" : "Peter Sans",
+        "Dept" : "Sales",
+        "Designation" : "Manager",
+        "Salary" : 12000
+}
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216377"),
+        "Name" : "Edgar Mathew",
+        "Dept" : "Training",
+        "Designation" : "Sr Manager",
+        "Salary" : 13000
+}
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216378"),
+        "Name" : "William Doe",
+        "Dept" : "Manufacturing",
+        "Designation" : "Engineer",
+        "Salary" : 15000
+}
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216379"),
+        "Name" : "Sham Saran",
+        "Dept" : "Training",
+        "Designation" : "Trainer",
+        "Salary" : 20000
+}
+> db.Employee.find().sort({Salary:-1}).pretty()
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216379"),
+        "Name" : "Sham Saran",
+        "Dept" : "Training",
+        "Designation" : "Trainer",
+        "Salary" : 20000
+}
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216378"),
+        "Name" : "William Doe",
+        "Dept" : "Manufacturing",
+        "Designation" : "Engineer",
+        "Salary" : 15000
+}
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216377"),
+        "Name" : "Edgar Mathew",
+        "Dept" : "Training",
+        "Designation" : "Sr Manager",
+        "Salary" : 13000
+}
+{
+        "_id" : ObjectId("61090ac662cabd4ff4216376"),
+        "Name" : "Peter Sans",
+        "Dept" : "Sales",
+        "Designation" : "Manager",
+        "Salary" : 12000
+}
+> db
+Person
+> var address = {City: "Thane", State: "Maharashtra" }
+> db.Student.insertOne(
+... {
+... Name: "Gurkirat Nagpal",
+... email:"gurki@gmail.com",
+... Address:address
+... }
+... )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("610915fd62cabd4ff421637a")
+}
+> db.Student.find().pretty()
+{
+        "_id" : ObjectId("610915fd62cabd4ff421637a"),
+        "Name" : "Gurkirat Nagpal",
+        "email" : "gurki@gmail.com",
+        "Address" : {
+                "City" : "Thane",
+                "State" : "Maharashtra"
+        }
+}
+> var address = {Street_no:12,  City: "Mumbai", State: "Maharashtra" }
+> db.Student.insertOne( { Name: "ZYWF", email:"XZ@gmail.com", Address:address } )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6109166862cabd4ff421637b")
+}
+> db.Student.find().pretty()
+{
+        "_id" : ObjectId("610915fd62cabd4ff421637a"),
+        "Name" : "Gurkirat Nagpal",
+        "email" : "gurki@gmail.com",
+        "Address" : {
+                "City" : "Thane",
+                "State" : "Maharashtra"
+        }
+}
+{
+        "_id" : ObjectId("6109166862cabd4ff421637b"),
+        "Name" : "ZYWF",
+        "email" : "XZ@gmail.com",
+        "Address" : {
+                "Street_no" : 12,
+                "City" : "Mumbai",
+                "State" : "Maharashtra"
+        }
+}
+> db.Student.insertOne( { Name: "ZYdedF", email:"XZdd@gmail.com", Address:address } )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6109171262cabd4ff421637c")
+}
+> db.Student.insertOne( { _id: ObjectId() ,  Name: "ZfdfddF", email:"fdfdfd@gmail.com", Address:address } )
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6109172d62cabd4ff421637d")
+}
+> db.Student.find().pretty()
+{
+        "_id" : ObjectId("610915fd62cabd4ff421637a"),
+        "Name" : "Gurkirat Nagpal",
+        "email" : "gurki@gmail.com",
+        "Address" : {
+                "City" : "Thane",
+                "State" : "Maharashtra"
+        }
+}
+{
+        "_id" : ObjectId("6109166862cabd4ff421637b"),
+        "Name" : "ZYWF",
+        "email" : "XZ@gmail.com",
+        "Address" : {
+                "Street_no" : 12,
+                "City" : "Mumbai",
+                "State" : "Maharashtra"
+        }
+}
+{
+        "_id" : ObjectId("6109171262cabd4ff421637c"),
+        "Name" : "ZYdedF",
+        "email" : "XZdd@gmail.com",
+        "Address" : {
+                "Street_no" : 12,
+                "City" : "Mumbai",
+                "State" : "Maharashtra"
+        }
+}
+{
+        "_id" : ObjectId("6109172d62cabd4ff421637d"),
+        "Name" : "ZfdfddF",
+        "email" : "fdfdfd@gmail.com",
+        "Address" : {
+                "Street_no" : 12,
+                "City" : "Mumbai",
+                "State" : "Maharashtra"
+        }
+}
+> show collections
+Employee
+Student
+> db.Employee.find()
+{ "_id" : ObjectId("61090ac662cabd4ff4216376"), "Name" : "Peter Sans", "Dept" : "Sales", "Designation" : "Manager", "Salary" : 12000 }
+{ "_id" : ObjectId("61090ac662cabd4ff4216377"), "Name" : "Edgar Mathew", "Dept" : "Training", "Designation" : "Sr Manager", "Salary" : 13000 }
+{ "_id" : ObjectId("61090ac662cabd4ff4216378"), "Name" : "William Doe", "Dept" : "Manufacturing", "Designation" : "Engineer", "Salary" : 15000 }
+{ "_id" : ObjectId("61090ac662cabd4ff4216379"), "Name" : "Sham Saran", "Dept" : "Training", "Designation" : "Trainer", "Salary" : 20000 }
+> show databases
+Customer  0.000GB
+ItemDb    0.000GB
+Person    0.000GB
+admin     0.000GB
+config    0.000GB
+local     0.000GB
+> use ItemDb
+switched to db ItemDb
+> show databases
+Customer  0.000GB
+ItemDb    0.000GB
+Person    0.000GB
+admin     0.000GB
+config    0.000GB
+local     0.000GB
+> show collections
+Items
+>

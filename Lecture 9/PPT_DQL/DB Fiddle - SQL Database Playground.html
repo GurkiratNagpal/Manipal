@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://www.db-fiddle.com/f/jcNRcGSXvkUoPbGGKmF3ZD/3 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=1080">
+    <meta name="description" content="An online SQL database playground for testing, debugging and sharing SQL snippets.">
+    <link rel="icon" type="image/png" href="https://www.db-fiddle.com/favicon-7f8b8049f6e2ae243dcd50e3925fe458.png">
+
+    
+<meta name="db-fiddle/config/environment" content="%7B%22modulePrefix%22%3A%22db-fiddle%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22apiEndpoint%22%3A%22https%3A//prod-api.db-fiddle.com%22%2C%22apiNamespace%22%3A%22v1%22%2C%22databaseOptions%22%3A%5B%7B%22groupName%22%3A%22MySQL%22%2C%22typeIdentifier%22%3A%22mysql%22%2C%22options%22%3A%5B%7B%22groupName%22%3A%22MySQL%22%2C%22name%22%3A%228.0%22%2C%22url%22%3A%22server/mysql/8-0%22%2C%22dbType%22%3A%22mysql%22%2C%22codeMirrorMode%22%3A%22text/x-mysql%22%7D%2C%7B%22groupName%22%3A%22MySQL%22%2C%22name%22%3A%225.7%22%2C%22url%22%3A%22server/mysql/5-7%22%2C%22dbType%22%3A%22mysql%22%2C%22codeMirrorMode%22%3A%22text/x-mysql%22%7D%2C%7B%22groupName%22%3A%22MySQL%22%2C%22name%22%3A%225.6%22%2C%22url%22%3A%22server/mysql/5-6%22%2C%22dbType%22%3A%22mysql%22%2C%22codeMirrorMode%22%3A%22text/x-mysql%22%7D%2C%7B%22groupName%22%3A%22MySQL%22%2C%22name%22%3A%225.5%22%2C%22url%22%3A%22server/mysql/5-5%22%2C%22dbType%22%3A%22mysql%22%2C%22codeMirrorMode%22%3A%22text/x-mysql%22%7D%5D%2C%22example%22%3A%7B%22schema%22%3A%22CREATE%20TABLE%20test%20%28%5Cn%20%20id%20INT%5Cn%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%281%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%282%29%3B%22%2C%22query%22%3A%22SELECT%20*%20FROM%20test%3B%22%7D%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22typeIdentifier%22%3A%22pgsql%22%2C%22options%22%3A%5B%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2213%22%2C%22url%22%3A%22server/pgsql/13%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2212%22%2C%22url%22%3A%22server/pgsql/12%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2211%22%2C%22url%22%3A%22server/pgsql/11%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%2210.0%22%2C%22url%22%3A%22server/pgsql/10-0%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%229.6%22%2C%22url%22%3A%22server/pgsql/9-6%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%229.5%22%2C%22url%22%3A%22server/pgsql/9-5%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%7D%2C%7B%22groupName%22%3A%22PostgreSQL%22%2C%22name%22%3A%229.4%22%2C%22url%22%3A%22server/pgsql/9-4%22%2C%22dbType%22%3A%22pgsql%22%2C%22codeMirrorMode%22%3A%22text/x-pgsql%22%7D%5D%2C%22example%22%3A%7B%22schema%22%3A%22CREATE%20TABLE%20test%20%28%5Cn%20%20id%20INT%5Cn%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%281%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%282%29%3B%22%2C%22query%22%3A%22SELECT%20*%20FROM%20test%3B%22%7D%7D%2C%7B%22groupName%22%3A%22SQLite%22%2C%22typeIdentifier%22%3A%22sqlite%22%2C%22options%22%3A%5B%7B%22groupName%22%3A%22SQLite%22%2C%22name%22%3A%223.30%22%2C%22url%22%3A%22server/sqlite/3-30%22%2C%22dbType%22%3A%22sqlite%22%2C%22codeMirrorMode%22%3A%22text/x-sql%22%7D%2C%7B%22groupName%22%3A%22SQLite%22%2C%22name%22%3A%223.26%22%2C%22url%22%3A%22server/sqlite/3-26%22%2C%22dbType%22%3A%22sqlite%22%2C%22codeMirrorMode%22%3A%22text/x-sql%22%7D%5D%2C%22example%22%3A%7B%22schema%22%3A%22CREATE%20TABLE%20test%20%28%5Cn%20%20id%20INT%5Cn%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%281%29%3B%5CnINSERT%20INTO%20test%20%28id%29%20VALUES%20%282%29%3B%22%2C%22query%22%3A%22SELECT%20*%20FROM%20test%3B%22%7D%7D%5D%2C%22subscriptionPlanId%22%3A%22533317%22%2C%22name%22%3A%22db-fiddle%22%2C%22version%22%3A%22v2.16.0+d5a8fec4%22%7D%2C%22featureFlags%22%3A%7B%7D%2C%22ember-cli-mirage%22%3A%7B%22usingProxy%22%3Afalse%2C%22useDefaultPassthroughs%22%3Atrue%7D%2C%22exportApplicationGlobal%22%3Afalse%7D">
+
+    <link rel="stylesheet" href="./DB Fiddle - SQL Database Playground_files/vendor-3f24bc48c5ae6636eeaa84ce477acc6a.css" integrity="sha256-XwKxXObZJVGliZa1GvWKpUT735233vhy8RS0LzaeyY4= sha512-UrgIgh5s7pgUp0e99HQdBuufOq2KoHYXElYZRKRV6BveAgxEWmFCVvzVzfQra75XSzoBHSBdw4ZWsYsG/gsL5Q==">
+    <link rel="stylesheet" href="./DB Fiddle - SQL Database Playground_files/db-fiddle-70abadd07bdb2c8fa9b9163b6482e85a.css" integrity="sha256-dNfU8vqsClQLUJfzZR0ttLAlQ99DjMC0Hn+s1uuVrDI= sha512-Zmxub3RxSufbilpcll6AP2t4zJ3xs46wf0+aQY6fHnvE8s6q8Uv62EIsdD+avAxieyo1WZ1RbsoVGYLPqCpf+w==">
+
+    
+  <link rel="stylesheet" type="text/css" href="./DB Fiddle - SQL Database Playground_files/animate.css" media="all"><link rel="stylesheet" type="text/css" href="./DB Fiddle - SQL Database Playground_files/paddle.css" media="all">  <meta name="ember-cli-head-start" content=""><title>DB Fiddle - SQL Database Playground</title>
+<meta name="ember-cli-head-end" content="">
+<script id="_carbonads_projs" type="text/javascript" src="./DB Fiddle - SQL Database Playground_files/CK7IT5QJ.json"></script><script id="_carbonads_projs" type="text/javascript" src="./DB Fiddle - SQL Database Playground_files/CK7IT5QJ.json"></script><script id="_carbonads_projs" type="text/javascript" src="./DB Fiddle - SQL Database Playground_files/CK7IT5QJ.json"></script><script id="_carbonads_projs" type="text/javascript" src="./DB Fiddle - SQL Database Playground_files/CK7IT5QJ.json"></script><script id="_carbonads_projs" type="text/javascript" src="./DB Fiddle - SQL Database Playground_files/CK7IT5QJ.json"></script><script id="_carbonads_projs" type="text/javascript" src="./DB Fiddle - SQL Database Playground_files/CK7IT5QJ.json"></script><script id="_carbonads_projs" type="text/javascript" src="./DB Fiddle - SQL Database Playground_files/CK7IT5QJ.json"></script></head>
+  <body class="ember-application">
+    
+
+    <script async="" src="./DB Fiddle - SQL Database Playground_files/analytics.js.download"></script><script src="./DB Fiddle - SQL Database Playground_files/tracker.js.download"></script><script src="./DB Fiddle - SQL Database Playground_files/vendor-b274cc33e28e659988cde24fe8e92a39.js.download" integrity="sha256-F5NOij0hgmaodLgOEGguauju5nTAL8Bvosv0Rh+EovQ= sha512-93FqX0ujgt/fy/1DZ1uBhbN9wBTtdLPNhaVgU8HZJZ7klPgsdTGmPPowoIZwPx1DP3EGkHARg0QlvRjc9L1+vA=="></script>
+    <script src="./DB Fiddle - SQL Database Playground_files/db-fiddle-705d38223554d25b9fdbf9e8b5fdad35.js.download" integrity="sha256-oZxteMhayrCQ6UA5lyZu0DD23j71Xues9gilK6oOX2g= sha512-PQRhYkwyJISJlU2BlEYLhOmV4JySr7pS1qPau115Y58zqAIrclP3txkSz0f+n8G37aTfs/3YWTP8nSXoZ7/vaw=="></script>
+    <script src="./DB Fiddle - SQL Database Playground_files/paddle.js.download"></script>
+    <script src="./DB Fiddle - SQL Database Playground_files/widget.js.download"></script>
+    <script>
+      var TogetherJSConfig_hubBase = "https://togetherjs-hub.glitch.me/";
+      var TogetherJSConfig_toolName = "Collaboration";
+      var TogetherJSConfig_cloneClicks = "#runButton";
+      var TogetherJSConfig_ignoreMessages = true;
+    </script>
+    <script src="./DB Fiddle - SQL Database Playground_files/togetherjs-min.js.download"></script>
+
+    <div id="ember-basic-dropdown-wormhole"></div>
+    <script>
+      !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+      arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+      d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+      insertBefore(d,q)}(window,document,'script','_gs');
+      _gs('GSN-273724-J', false);
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-45377746-6', 'auto');
+      ga('send', 'pageview');
+    </script>
+  
+
+<div class="ember-view" id="ember338"><!---->
+
+<!---->
+
+<header id="ember396" class="ember-view"><a id="logo" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" href="https://www.db-fiddle.com/" class="ember-view">  <svg class="feather feather-database">
+  <use xlink:href="/assets/feather-sprite.svg#database"></use>
+</svg>
+<span id="HW_badge_cont" class="HW_badge_cont HW_visible" style=""><span id="HW_badge" class="HW_badge HW_visible" data-count-unseen="3" style="">3</span></span></a>
+
+<div id="ember2049" aria-owns="ember-basic-dropdown-content-ember2048" tabindex="0" data-ebd-id="ember2048-trigger" role="button" class="ember-power-select-trigger ember-basic-dropdown-trigger ember-view">    <div id="ember2086" class="ember-view">Database: MySQL v5.7</div>
+<!----><span class="ember-power-select-status-icon"></span>
+</div>
+  <div id="ember-basic-dropdown-content-ember2048" class="ember-basic-dropdown-content-placeholder" style="display: none;"></div>
+
+  <button id="runButton" type="button" data-ember-action="" data-ember-action-2053="2053">
+    <svg class="feather feather-play">
+  <use xlink:href="/assets/feather-sprite.svg#play"></use>
+</svg>
+    Run
+  </button>
+    <button id="saveButton" type="button">
+      <svg class="feather feather-save">
+  <use xlink:href="/assets/feather-sprite.svg#save"></use>
+</svg>
+      Update
+    </button>
+    <button id="forkButton" type="button">
+      <svg class="feather feather-git-branch">
+  <use xlink:href="/assets/feather-sprite.svg#git-branch"></use>
+</svg>
+      Fork
+    </button>
+  <button id="loadExampleButton" type="button" data-ember-action="" data-ember-action-2057="2057">
+    <svg class="feather feather-refresh-cw">
+  <use xlink:href="/assets/feather-sprite.svg#refresh-cw"></use>
+</svg>
+    Load Example
+  </button>
+      <button id="starButton" disabled="" type="button">
+        <svg class="feather feather-star">
+  <use xlink:href="/assets/feather-sprite.svg#star"></use>
+</svg>
+        Star
+      </button>
+        <a id="ember2060" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" target="_blank" href="https://www.db-fiddle.com/upgrade" class="pro-badge ember-view">PRO</a>
+    <div id="embedButtonContainer">
+      <button id="embedButton" disabled="" type="button">
+        <svg class="feather feather-code">
+  <use xlink:href="/assets/feather-sprite.svg#code"></use>
+</svg>
+        Embed
+      </button>
+        <a id="ember2062" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" target="_blank" href="https://www.db-fiddle.com/upgrade" class="pro-badge ember-view">PRO</a>
+      <div id="embedPopup">
+          <strong>Embed snippet:</strong><br>
+          <textarea class="form-control" readonly="true">&lt;iframe width="100%" height="300" frameborder="0" src=""&gt;&lt;/iframe&gt;</textarea>
+          <small>Copy and paste the above HTML to embed your fiddle.</small>
+          <div id="embedDone">
+            <strong>Done</strong>
+          </div>
+      </div>
+    </div>
+  <button id="collaborateButton" type="button" data-ember-action="" data-ember-action-2063="2063">
+    <svg class="feather feather-users">
+  <use xlink:href="/assets/feather-sprite.svg#users"></use>
+</svg>
+    Collaborate
+  </button>
+
+<!---->
+<div class="pull-right">
+    <button id="signinButton" type="button" data-ember-action="" data-ember-action-456="456">
+      <svg class="feather feather-log-in">
+  <use xlink:href="/assets/feather-sprite.svg#log-in"></use>
+</svg>
+      Sign in
+    </button>
+  <a href="https://www.surveymonkey.co.uk/r/C9H25Z8" target="_blank" class="btn btn-green">
+    Have any feedback?
+  </a>
+  <a href="https://twitter.com/db_fiddle" rel="noopener noreferrer" target="_blank" id="twitterLink" aria-label="Open DB Fiddle Twitter page">
+    <svg class="feather feather-twitter">
+  <use xlink:href="/assets/feather-sprite.svg#twitter"></use>
+</svg>
+  </a>
+</div></header>
+
+<main>
+<!---->  <div id="fiddle-editor" class="ember-view">
+
+  <div id="fiddle-editor-sidebar" class="ember-view"><div id="fiddle-editor-sidebar-content">
+  <div id="ember2068" class="form-group ember-view">  <label for="title">Fiddle Title</label>
+<input id="title" maxlength="50" class="form-control" type="text">
+  <small>50 characters remaining.</small>
+<!----></div>
+
+  <div id="ember2069" class="form-group ember-view">  <label for="description">Fiddle Description</label>
+<textarea id="description" maxlength="300" class="form-control"></textarea>
+  <small>300 characters remaining.</small>
+<!----></div>
+
+  <div id="ember2070" class="form-group ember-view">  <label for="private">
+    Private Fiddle
+      <a id="ember2071" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" target="_blank" href="https://www.db-fiddle.com/upgrade" class="pro-badge ember-view">PRO</a>
+  </label>
+<div id="ember2072" class="x-toggle-component ember-view">  <label id="ember2073" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer; display: none;" for="ember2072-x-toggle" class="toggle-text toggle-prefix off-label ember-view">  Off
+</label>
+
+  <span id="ember2074" class="x-toggle-container medium x-toggle-container-disabled ember-view" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><input disabled="" class="x-toggle" id="ember2072-x-toggle" name="default" type="checkbox">
+
+<label for="ember2072-x-toggle">
+  <div aria-owns="ember2072-x-toggle" role="checkbox" aria-checked="false" class="x-toggle-btn x-toggle-light medium x-toggle-disabled" data-tg-on="On" data-tg-off="Off" id="x-toggle-visual-ember2072-x-toggle">
+  </div>
+</label>
+</span>
+
+  <label id="ember2075" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer; display: none;" for="ember2072-x-toggle" class="toggle-text toggle-prefix on-label ember-view">  On
+</label>
+</div>
+  <small>This setting cannot be modified after saving the fiddle.</small>
+<!----></div>
+
+    <hr>
+    <a id="upgradeButton" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" href="https://www.db-fiddle.com/upgrade" class="btn btn-green ember-view">Upgrade to PRO</a>
+    <strong>
+      50% OFF for Early Adopters
+    </strong>
+
+  <hr>
+  <div id="fiddle-editor-sidebar-links">
+    <a href="https://www.db-fiddle.com/f/jcNRcGSXvkUoPbGGKmF3ZD/3#" class="fiddle-editor-sidebar-link">Show Keyboard Shortcuts</a>
+  </div>
+</div>
+
+  <div id="fiddle-editor-sidebar-ad">
+    <script async="" src="./DB Fiddle - SQL Database Playground_files/carbon.js.download" id="_carbonads_js" type="text/javascript"></script><div id="carbonads"><span><span class="carbon-wrap"><a href="https://srv.carbonads.net/ads/click/x/GTND42JLCABICKJWCWYLYKQNCVSIK53WCYYDPZ3JCY7D52JMCEBDV27KC6BDP2Q7CAYIT23MCYBDL2JLCYYDK53LHEYIKKJUCWBD6K3ECTNCYBZ52K?segment=placement:wwwdb-fiddlecom;" class="carbon-img" target="_blank" rel="noopener sponsored"><img src="./DB Fiddle - SQL Database Playground_files/1550855401-cc_light.png" alt="ads via Carbon" border="0" height="100" width="130" style="max-width: 130px;"></a><a href="https://srv.carbonads.net/ads/click/x/GTND42JLCABICKJWCWYLYKQNCVSIK53WCYYDPZ3JCY7D52JMCEBDV27KC6BDP2Q7CAYIT23MCYBDL2JLCYYDK53LHEYIKKJUCWBD6K3ECTNCYBZ52K?segment=placement:wwwdb-fiddlecom;" class="carbon-text" target="_blank" rel="noopener sponsored">Students and Teachers, save up to 60% on Adobe Creative Cloud.</a></span><a href="http://carbonads.net/?utm_source=wwwdb-fiddlecom&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon" class="carbon-poweredby" target="_blank" rel="noopener sponsored">ads via Carbon</a></span></div>
+  </div>
+
+<!---->
+<!----></div>
+
+<div id="fiddle-editor-main" class="no-results">
+    <div id="schema" class="panel ember-view"><div class="panel-title">
+  <h2>
+<!---->    Schema SQL
+  </h2>
+<!----></div>
+<textarea id="schema-input" style="touch-action: manipulation; cursor: pointer; display: none;" class="ember-view"></textarea><div class="CodeMirror CodeMirror-wrap cm-s-mdn-like"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 638px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 32px; margin-bottom: -16px; border-right-width: 14px; min-height: 621px; padding-right: 16px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>39</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 15.3333px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -32px; width: 32px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">CREATE</span> <span class="cm-keyword">TABLE</span> TEACHER<span class="cm-bracket">(</span>ID <span class="cm-builtin">int</span> <span class="cm-keyword">PRIMARY</span> <span class="cm-keyword">KEY</span><span class="cm-punctuation">,</span> NAME <span class="cm-builtin">varchar</span><span class="cm-bracket">(</span><span class="cm-number">30</span><span class="cm-bracket">)</span><span class="cm-punctuation">,</span>SUBJECT <span class="cm-builtin">text</span><span class="cm-punctuation">,</span> SALARY <span class="cm-builtin">int</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">10</span><span class="cm-punctuation">,</span><span class="cm-string">'Abhijeet'</span><span class="cm-punctuation">,</span> <span class="cm-string">"MATHS"</span><span class="cm-punctuation">,</span> <span class="cm-number">12000</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">21</span><span class="cm-punctuation">,</span><span class="cm-string">'Aishrath'</span><span class="cm-punctuation">,</span><span class="cm-string">"ENGLISH"</span><span class="cm-punctuation">,</span> <span class="cm-number">17200</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">32</span><span class="cm-punctuation">,</span><span class="cm-string">'Mythli'</span><span class="cm-punctuation">,</span> <span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span><span class="cm-number">13500</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">42</span><span class="cm-punctuation">,</span><span class="cm-string">'Pragati'</span><span class="cm-punctuation">,</span><span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span> <span class="cm-number">17200</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">51</span><span class="cm-punctuation">,</span><span class="cm-string">'Neha'</span><span class="cm-punctuation">,</span> <span class="cm-string">"MATHS"</span><span class="cm-punctuation">,</span> <span class="cm-number">12000</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">19</span><span class="cm-punctuation">,</span><span class="cm-string">'Hritika'</span><span class="cm-punctuation">,</span><span class="cm-string">"ENGLISH"</span><span class="cm-punctuation">,</span> <span class="cm-number">12700</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">23</span><span class="cm-punctuation">,</span><span class="cm-string">'Rohith'</span><span class="cm-punctuation">,</span> <span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span><span class="cm-number">10000</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">31</span><span class="cm-punctuation">,</span><span class="cm-string">'Niranjan'</span><span class="cm-punctuation">,</span><span class="cm-string">"ENGLISH"</span><span class="cm-punctuation">,</span> <span class="cm-number">75000</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">40</span><span class="cm-punctuation">,</span><span class="cm-string">'Raghavendra'</span><span class="cm-punctuation">,</span><span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span> <span class="cm-number">29100</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">58</span><span class="cm-punctuation">,</span><span class="cm-string">'Chirag'</span><span class="cm-punctuation">,</span><span class="cm-string">"MATHS"</span><span class="cm-punctuation">,</span> <span class="cm-number">1000</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">27</span><span class="cm-punctuation">,</span><span class="cm-string">'Chinmay'</span><span class="cm-punctuation">,</span><span class="cm-string">"ENGLISH"</span><span class="cm-punctuation">,</span> <span class="cm-number">15000</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">36</span><span class="cm-punctuation">,</span><span class="cm-string">'Ojasvi'</span><span class="cm-punctuation">,</span> <span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span><span class="cm-number">94000</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">47</span><span class="cm-punctuation">,</span><span class="cm-string">'Mayur'</span><span class="cm-punctuation">,</span><span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span> <span class="cm-number">12900</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHER <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">57</span><span class="cm-punctuation">,</span><span class="cm-string">'Mohit'</span><span class="cm-punctuation">,</span><span class="cm-string">"MATHS"</span><span class="cm-punctuation">,</span> <span class="cm-number">1000</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">CREATE</span> <span class="cm-keyword">TABLE</span> TEACHES<span class="cm-bracket">(</span>TID <span class="cm-builtin">int</span><span class="cm-punctuation">,</span> SUBNAME <span class="cm-builtin">text</span><span class="cm-punctuation">,</span> SEM <span class="cm-builtin">int</span><span class="cm-punctuation">,</span> COUNTSTUD <span class="cm-builtin">int</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">10</span><span class="cm-punctuation">,</span> <span class="cm-string">"MATHS"</span><span class="cm-punctuation">,</span> <span class="cm-number">2</span><span class="cm-punctuation">,</span> <span class="cm-number">100</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">57</span><span class="cm-punctuation">,</span> <span class="cm-string">"MATHS"</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">70</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">51</span><span class="cm-punctuation">,</span> <span class="cm-string">"MATHS"</span><span class="cm-punctuation">,</span> <span class="cm-number">2</span><span class="cm-punctuation">,</span> <span class="cm-number">100</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">58</span><span class="cm-punctuation">,</span> <span class="cm-string">"MATHS"</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">120</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">32</span><span class="cm-punctuation">,</span> <span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">50</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">42</span><span class="cm-punctuation">,</span> <span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span> <span class="cm-number">2</span><span class="cm-punctuation">,</span> <span class="cm-number">70</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">23</span><span class="cm-punctuation">,</span> <span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span> <span class="cm-number">2</span><span class="cm-punctuation">,</span> <span class="cm-number">50</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">40</span><span class="cm-punctuation">,</span> <span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">120</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">36</span><span class="cm-punctuation">,</span> <span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">70</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">47</span><span class="cm-punctuation">,</span> <span class="cm-string">"BIO"</span><span class="cm-punctuation">,</span> <span class="cm-number">2</span><span class="cm-punctuation">,</span> <span class="cm-number">120</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">21</span><span class="cm-punctuation">,</span> <span class="cm-string">"ENGLISH"</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">120</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">27</span><span class="cm-punctuation">,</span> <span class="cm-string">"ENGLISH"</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">100</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">31</span><span class="cm-punctuation">,</span> <span class="cm-string">"ENGLISH"</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">70</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">INSERT</span> <span class="cm-keyword">INTO</span> TEACHES <span class="cm-keyword">VALUES</span><span class="cm-bracket">(</span><span class="cm-number">19</span><span class="cm-punctuation">,</span> <span class="cm-string">"ENGLISH"</span><span class="cm-punctuation">,</span> <span class="cm-number">1</span><span class="cm-punctuation">,</span> <span class="cm-number">100</span><span class="cm-bracket">)</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">38</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">39</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 14px; width: 1px; border-bottom: 0px solid transparent; top: 621px;"></div><div class="CodeMirror-gutters" style="height: 635px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 32px;"></div></div></div></div>
+<div class="panel-tools">
+    <button class="btn btn-sm" data-ember-action="" data-ember-action-2079="2079">Text to DDL</button>
+  <button id="schemaFullscreenButton" class="btn toggle-fullscreen" aria-label="Schema SQL - Toggle Fullscreen" type="button" data-ember-action="" data-ember-action-2080="2080">
+      <svg class="feather feather-maximize-2">
+  <use xlink:href="/assets/feather-sprite.svg#maximize-2"></use>
+</svg>
+  </button>
+</div>
+
+<!----></div>
+
+    <div id="query" class="panel ember-view"><div class="panel-title">
+  <h2>
+<!---->    Query SQL
+  </h2>
+<!----></div>
+<textarea id="query-input" style="touch-action: manipulation; cursor: pointer; display: none;" class="ember-view"></textarea><div class="CodeMirror CodeMirror-wrap cm-s-mdn-like"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 836px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 32px; margin-bottom: -17px; border-right-width: 13px; min-height: 836px; padding-right: 17px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>53</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 15.3333px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -32px; width: 32px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> TEACHER<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> ID<span class="cm-punctuation">,</span> NAME <span class="cm-keyword">FROM</span> TEACHER <span class="cm-keyword">WHERE</span> SUBJECT <span class="cm-operator">=</span><span class="cm-string">"BIO"</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">COUNT</span><span class="cm-bracket">(</span>ID<span class="cm-bracket">)</span> <span class="cm-keyword">AS</span> TOTAL_TEACHERS <span class="cm-keyword">FROM</span> TEACHER<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">MIN</span><span class="cm-bracket">(</span>SALARY<span class="cm-bracket">)</span> <span class="cm-keyword">FROM</span> TEACHER<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">MAX</span><span class="cm-bracket">(</span>SALARY<span class="cm-bracket">)</span> <span class="cm-keyword">FROM</span> TEACHER<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">SUM</span><span class="cm-bracket">(</span>SALARY<span class="cm-bracket">)</span> <span class="cm-keyword">FROM</span> TEACHER<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">AVG</span><span class="cm-bracket">(</span>SALARY<span class="cm-bracket">)</span> <span class="cm-keyword">FROM</span> TEACHER<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">AVG</span><span class="cm-bracket">(</span>SALARY<span class="cm-bracket">)</span> <span class="cm-keyword">AS</span> AVERAGER <span class="cm-keyword">FROM</span> TEACHER <span class="cm-keyword">WHERE</span> NAME <span class="cm-keyword">LIKE</span> <span class="cm-string">"A%"</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">AVG</span><span class="cm-bracket">(</span>SALARY<span class="cm-bracket">)</span> <span class="cm-keyword">FROM</span> TEACHER <span class="cm-keyword">WHERE</span> ID<span class="cm-operator">&gt;</span><span class="cm-number">50</span><span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> TEACHER <span class="cm-keyword">ORDER</span> <span class="cm-keyword">BY</span> ID<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> NAME <span class="cm-keyword">FROM</span> TEACHER <span class="cm-keyword">ORDER</span> <span class="cm-keyword">BY</span> SALARY<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> TEACHER <span class="cm-keyword">WHERE</span> SALARY <span class="cm-keyword">BETWEEN</span> <span class="cm-number">10000</span> <span class="cm-keyword">AND</span> <span class="cm-number">40000</span> <span class="cm-keyword">ORDER</span> <span class="cm-keyword">BY</span> NAME<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">MIN</span><span class="cm-bracket">(</span>SALARY<span class="cm-bracket">)</span><span class="cm-punctuation">,</span> SUBJECT <span class="cm-keyword">FROM</span> TEACHER <span class="cm-keyword">GROUP</span> <span class="cm-keyword">BY</span> SUBJECT<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">COUNT</span><span class="cm-bracket">(</span>ID<span class="cm-bracket">)</span><span class="cm-punctuation">,</span> SUBJECT <span class="cm-keyword">FROM</span> TEACHER <span class="cm-keyword">GROUP</span> <span class="cm-keyword">BY</span> SUBJECT<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> TEACHES<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">SUM</span><span class="cm-bracket">(</span>COUNTSTUD<span class="cm-bracket">)</span><span class="cm-punctuation">,</span> SUBNAME</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">FROM</span> TEACHES</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">GROUP</span> <span class="cm-keyword">BY</span> SUBNAME<span class="cm-punctuation">;</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">38</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">SELECT</span> <span class="cm-keyword">AVG</span><span class="cm-bracket">(</span>SALARY<span class="cm-bracket">)</span><span class="cm-punctuation">,</span> SUBNAME</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">39</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">FROM</span> TEACHES <span class="cm-keyword">AS</span> A<span class="cm-punctuation">,</span> TEACHER <span class="cm-keyword">AS</span> B</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">40</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">WHERE</span>  A<span class="cm-variable-2">.TID</span><span class="cm-operator">=</span>B<span class="cm-variable-2">.ID</span> <span class="cm-keyword">AND</span> SEM <span class="cm-operator">=</span><span class="cm-number">1</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -32px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">41</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">GROUP</span> <span class="cm-keyword">BY</span> SUBNAME<span class="cm-punctuation">;</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 836px;"></div><div class="CodeMirror-gutters" style="height: 849px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 32px;"></div></div></div></div>
+<div class="panel-tools">
+<!---->  <button id="queryFullscreenButton" class="btn toggle-fullscreen" aria-label="Query SQL - Toggle Fullscreen" type="button" data-ember-action="" data-ember-action-2084="2084">
+      <svg class="feather feather-maximize-2">
+  <use xlink:href="/assets/feather-sprite.svg#maximize-2"></use>
+</svg>
+  </button>
+</div>
+
+<!----></div>
+
+<!----></div></div>
+</main>
+
+<footer>
+  <div id="footer-strapline">
+    DB Fiddle – Crafted with ♥ by <a href="https://www.status200.co.uk/" target="_blank">Status200</a> in the United Kingdom.
+  </div>
+  <div id="footer-legal">
+    <a id="ember539" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" href="https://www.db-fiddle.com/legal/terms-of-use" class="ember-view">Terms of Use</a>
+    •
+    <a id="ember550" style="touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;" href="https://www.db-fiddle.com/legal/privacy-and-cookie-policy" class="ember-view">Privacy / Cookie Policy</a>
+    •
+    <a href="https://www.status200.co.uk/" target="_blank">Status200 Ltd</a> © 2018
+  </div>
+</footer>
+
+<div class="alert alert- " id="flash-message">
+  
+  <div id="flash-close" data-ember-action="" data-ember-action-558="558">×</div>
+</div>
+
+<!----><!----></div><style id="HW_styles_cont">.HW_badge_cont {
+  visibility: hidden;
+  pointer-events: none;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.HW_absolute {
+  position: absolute !important;
+}
+
+.HW_badge_cont.HW_visible {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.HW_badge {
+  display: block;
+  border-radius: 20px;
+  background: #CD4B5B;
+  height: 16px;
+  width: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 16px;
+  font-size: 11px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  opacity: 0;
+  will-change: scale;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+.HW_top {
+  top: -16px;
+}
+
+.HW_bottom {
+  bottom: -16px;
+}
+
+.HW_left {
+  left: -16px;
+}
+
+.HW_right {
+  right: -16px;
+}
+
+.HW_center, .HW_vcenter {
+  left: 50%;
+  margin-left: -16px;
+}
+
+.HW_center, .HW_hcenter {
+  top: 50%;
+  margin-top: -16px;
+}
+
+.HW_badge.HW_softHidden {
+  background: #d4d4d4;
+  opacity: 1;
+  transform: scale(0.6);
+}
+
+.HW_badge.HW_hidden {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.HW_badge.HW_visible {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+.HW_frame_cont {
+  pointer-events: none;
+  border-radius: 4px;
+  box-shadow: 0 0 1px rgba(99, 114, 130, 0.32), 0 8px 16px rgba(27, 39, 51, 0.08);
+  background: #fff;
+  border: none;
+  position: fixed;
+  top: -900em;
+  z-index: 2147483647;
+  width: 340px;
+  height: 0;
+  opacity: 0;
+  will-change: height, margin-top, opacity;
+  margin-top: -10px;
+  transition: margin-top 0.15s ease-out, opacity 0.1s ease-out;
+  overflow: hidden;
+}
+
+.HW_frame_cont.HW_visible {
+  opacity: 1;
+  pointer-events: auto;
+  margin-top: 0px;
+}
+
+.HW_frame_cont.HW_visible.HW_bottom {
+  transition: margin-top 0.15s ease-out, opacity 0.1s ease-out, height 0.3s ease-out;
+}
+
+.HW_frame {
+  background: #fff;
+  border: none;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  z-index: 2147483647;
+}
+
+.HW_frame_cont.HW_embed {
+  position: static;
+  margin-top: 0;
+}
+
+.HW_notransition {
+  transition: none !important;
+}</style><div id="HW_frame_cont" class="HW_frame_cont HW_bottom" data-account="yjrZ6y" style="height: 328px;"><iframe id="HW_frame" class="HW_frame" src="./DB Fiddle - SQL Database Playground_files/yjrZ6y.html" referrerpolicy="strict-origin" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups allow-forms allow-popups-to-escape-sandbox" tabindex="-1" aria-hidden="true" style="height: 328px;"></iframe></div></body></html>

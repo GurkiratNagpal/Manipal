@@ -1,0 +1,11 @@
+package com.telstra;
+
+public class Main {
+	public static void main(String[] args) {
+		Hospital NewbornSpecialist = new Hospital();
+		NewbornSpecialist.RegisterNewborn(Rahul, 2, 0.3);
+		NewbornSpecialist.generateReport(Rahul);
+		
+	}
+
+}

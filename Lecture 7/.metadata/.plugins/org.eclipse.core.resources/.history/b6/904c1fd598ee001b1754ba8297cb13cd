@@ -1,0 +1,7 @@
+package com.telstra.model.bookop;
+
+public interface BookOps {
+	
+	String addBook(Book b);
+
+}
