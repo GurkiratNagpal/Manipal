@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="student1" class="com.springcore.SprngCre.Student">
+
+		<!-- collaborators and configuration for this bean go here -->
+		<property name="sId"><value>10 </value> </property>
+		<property name="sName"><value>Gurkirat</value></property>
+		<property name="sAdd"><value>Bangalore</value> </property>
+		
+	</bean>
+	
+	<bean name="student2" class="com.springcore.SprngCre.Student">
+
+		<!-- collaborators and configuration for this bean go here -->
+		<property name="sId"><value>13 </value> </property>
+		<property name="sName"><value>Jayesh</value></property>
+		<property name="sAdd"><value>Amritsar</value> </property>
+		
+
+	</bean>
+
+</beans>
