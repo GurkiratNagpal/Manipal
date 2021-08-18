@@ -16,4 +16,9 @@
 	<constructor-arg value = "10" />
 	</bean>
 	
+	<bean id= "first" class = "com.springcore.constructorinjection.Add">
+	<constructor-arg value = "12" type = "String"/>
+		<constructor-arg value = "22"  type = "String"/>
+	</bean>
+	
 </beans>

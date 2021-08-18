@@ -11,8 +11,8 @@ public class Main {
 		Person p= (Person) con.getBean("p1");
 		System.out.println(p);
 		
-		
-
+		Add a = (Add) con.getBean("first");
+		a.dosum();
 	}
 
 }

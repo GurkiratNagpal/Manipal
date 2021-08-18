@@ -1,0 +1,41 @@
+-----Display the toys which was rented out on 20/05/2020 
+
+Select * from toy_rental where Rental_start_date = "2020-05-20";
+
+
+-----Display the customer who has availed rental more than two toys currently 
+
+Select * from customer where Customer_Id in (select Customer_Id from toy_rental group by Customer_ID having count(Toy_Id)>2) 
+
+-----Display all the customers who have rented at least 1 toy, and details of toy, rental return date.   
+
+Select Customer_Name, Toy_name, Toy_type, Rental_End_Date  from Customer as C, Toy as T, Toy_Rental as R where R.Toy_Id = T.Toy_Id and C.Customer_Id in (Select Customer_Id from toy_rental);
+
+
+----Fetch the customer who has availed maximum number of  toys for rental during the current fiscal   
+
+ Select Customer_Id, count(toy_Id) as s from toy_rental where Rental_Start_Date>"2021-04-01" group by Customer_Id having s= max(s);
+
+
+Fetch the toy which was availed for rent by most customers 
+
+Select toy_Id, count(Customer_Id) as s from toy_rental  group by toy_Id having s= max(s);
+
+Identify the customers who have opted for more than 1 toy for rental 
+
+
+
+Select * from customer where Customer_Id in (select Customer_Id from toy_rental group by Customer_ID having sum(Toy_Id)>1) 
+
+
+Fetch the user information who has not returned the toys after the rental period 
+SELECT * FROM CUSTOMER
+WHERE CUSTOMER_ID IN(SELECT CUSTOMER_ID FROM TOY_RENTAL
+WHERE RENTAL_END_DATE < getDate()
+AND STATUS = 'Pending'
+GROUP BY CUSTOMER_ID);
+
+Display the customer information and toys information for the rental_id/s which was rented on 25th of Jan 2020 
+
+
+SELECT CUSTOMER_NAME, TOY_NAME, RENTAL_START_DATE, RENTAL_END_DATE FROM CUSTOMER C, TOY T, TOY_RENTAL R WHERE RENTAL_START_DATE = "2020-01-25" AND C.CUSTOMER_ID = R.CUSTOMER_ID AND R.TOY_ID = T.TOY_ID;

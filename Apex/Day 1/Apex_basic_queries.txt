@@ -1,0 +1,62 @@
+Integer i = 10;
+System.debug('My first variable: '+i);
+Integer sec = 20;
+System.debug('My second int variable: '+ sec);
+String gun = 'Gurkirat';
+System.debug(gun + ' is my name');
+Boolean isTrue = True;
+System.debug('Is this true? ' + isTrue);
+Double d = 19.02;
+System.debug(d);
+Date curr_Day = DATE.today();
+Date month_later = curr_Day.addDays(30);
+System.debug('WHats month later date?   ' +month_later);
+System.debug('wHixh month?' + month_later.month());
+List<String> myL = new LIST<String>{'red', 'yelow'};
+System.debug('My list: ' + myL);
+
+List<Integer> myL2 = new LIST<Integer>();
+myL2.add(2);
+myL2.add(9);
+myL2.add(7);
+System.debug('My list: ' + myL2.get(0)); //index = 0
+myL2.clear();
+System.debug('My list: ' + myL2);
+
+
+Set<Integer> mySet = new Set<Integer>{11,22,33,22,11,33,4,0,5,6,7};
+   
+    mySet.remove(7);  //element = 7
+    System.debug(mySet);
+
+List<String> mylist = new List<String>{'Tuesday', 'Wednesday'};
+    for(String days:mylist)
+    System.debug('We got'+days);
+
+
+For classes -> modifiers: global, public.
+For methods/Variables->modifiers:global, public, private, protected.
+
+Query Languages:
+
+SoQl - Salesforce Object Query Language - syntax like SQL
+
+SOSL - Salesforcce Object Search Language
+
+Capability of searching a string accross multiple objects
+
+find 'search Query' [In search group][Returning objs and fields]
+find {TeacherA}
+find {Corp} returning Lead(Name, Company), Account(Name)
+find {Corp} in email fields
+
+Type of fields:
+All, Name, Email, phone fields.
+
+
+
+
+
+
+
+
